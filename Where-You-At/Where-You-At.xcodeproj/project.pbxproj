@@ -15,6 +15,8 @@
 		0950D81E1BFE345400D2CD34 /* Where_You_AtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0950D81D1BFE345400D2CD34 /* Where_You_AtTests.swift */; };
 		0950D8281BFE346400D2CD34 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0950D8271BFE346400D2CD34 /* CoreLocation.framework */; };
 		0950D82A1BFE3B2600D2CD34 /* tag-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 0950D8291BFE3B2600D2CD34 /* tag-line.png */; };
+		0950D82C1BFE57D200D2CD34 /* SignUp-View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0950D82B1BFE57D200D2CD34 /* SignUp-View.xib */; };
+		0950D82E1BFE5FCE00D2CD34 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0950D82D1BFE5FCE00D2CD34 /* View.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		0950D81D1BFE345400D2CD34 /* Where_You_AtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Where_You_AtTests.swift; sourceTree = "<group>"; };
 		0950D8271BFE346400D2CD34 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0950D8291BFE3B2600D2CD34 /* tag-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tag-line.png"; path = "Images.xcassets/tag-line.png"; sourceTree = "<group>"; };
+		0950D82B1BFE57D200D2CD34 /* SignUp-View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SignUp-View.xib"; sourceTree = "<group>"; };
+		0950D82D1BFE5FCE00D2CD34 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				0950D8071BFE345400D2CD34 /* AppDelegate.swift */,
 				0950D8091BFE345400D2CD34 /* ViewController.swift */,
 				0950D80B1BFE345400D2CD34 /* Main.storyboard */,
+				0950D82D1BFE5FCE00D2CD34 /* View.xib */,
+				0950D82B1BFE57D200D2CD34 /* SignUp-View.xib */,
 				0950D8291BFE3B2600D2CD34 /* tag-line.png */,
 				0950D80E1BFE345400D2CD34 /* Images.xcassets */,
 				0950D8101BFE345400D2CD34 /* LaunchScreen.xib */,
@@ -200,8 +206,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0950D82A1BFE3B2600D2CD34 /* tag-line.png in Resources */,
+				0950D82C1BFE57D200D2CD34 /* SignUp-View.xib in Resources */,
 				0950D80D1BFE345400D2CD34 /* Main.storyboard in Resources */,
 				0950D8121BFE345400D2CD34 /* LaunchScreen.xib in Resources */,
+				0950D82E1BFE5FCE00D2CD34 /* View.xib in Resources */,
 				0950D80F1BFE345400D2CD34 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
