@@ -524,7 +524,80 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7Gx-PN-lkj">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gn-ah-Q9E">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="22"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFQ-M6-sWh">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.9450981021" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Nrl-1B-ebq"/>
+                                    <constraint firstAttribute="width" constant="23" id="TDO-tl-DdX"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="21" id="TLM-Tw-F06"/>
+                                    <constraint firstAttribute="height" constant="23" id="uiE-D6-oym"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TLM-Tw-F06"/>
+                                        <exclude reference="uiE-D6-oym"/>
+                                        <exclude reference="Nrl-1B-ebq"/>
+                                        <exclude reference="TDO-tl-DdX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="24"/>
+                                    <rect key="frame" x="99" y="87" width="23" height="21"/>
+                                    <mask key="constraints">
+                                        <include reference="TLM-Tw-F06"/>
+                                        <exclude reference="uiE-D6-oym"/>
+                                        <include reference="Nrl-1B-ebq"/>
+                                        <include reference="TDO-tl-DdX"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="1gn-ah-Q9E" secondAttribute="centerX" id="dft-Em-R1B"/>
+                            <constraint firstItem="1gn-ah-Q9E" firstAttribute="top" secondItem="4cv-7r-hJu" secondAttribute="bottom" constant="19" id="jgj-RT-cDM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1gn-ah-Q9E"/>
+                                <exclude reference="uFQ-M6-sWh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="dft-Em-R1B"/>
+                                <exclude reference="jgj-RT-cDM"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="1gn-ah-Q9E"/>
+                                <include reference="uFQ-M6-sWh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="dft-Em-R1B"/>
+                                <include reference="jgj-RT-cDM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="aAV-UF-fEl">
                         <barButtonItem key="rightBarButtonItem" title="Map" id="ROy-pK-jTV">
