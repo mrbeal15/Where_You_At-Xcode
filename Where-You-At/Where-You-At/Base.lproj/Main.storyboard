@@ -236,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="1141.5" y="433.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Invite-->
         <scene sceneID="96x-Cn-NTA">
             <objects>
-                <viewController id="XH7-Ne-ZHU" sceneMemberID="viewController">
+                <viewController id="XH7-Ne-ZHU" customClass="Invite" customModule="Where_You_At" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lx6-P5-hEZ"/>
                         <viewControllerLayoutGuide type="bottom" id="fZt-FW-UKc"/>
@@ -369,6 +369,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="invite" destination="d4G-yW-rl5" id="C9H-pc-g1T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVq-EK-HrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -536,10 +539,10 @@
             </objects>
             <point key="canvasLocation" x="3111" y="433.5"/>
         </scene>
-        <!--View Controller-->
+        <!--User Groups-->
         <scene sceneID="qj3-SA-OV8">
             <objects>
-                <viewController id="fVP-wN-3xX" sceneMemberID="viewController">
+                <viewController id="fVP-wN-3xX" customClass="userGroups" customModule="Where_You_At" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4cv-7r-hJu"/>
                         <viewControllerLayoutGuide type="bottom" id="EOU-ys-upf"/>
@@ -668,10 +671,10 @@
             </objects>
             <point key="canvasLocation" x="5013" y="433.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up-->
         <scene sceneID="Pho-s3-vjR">
             <objects>
-                <viewController id="d4N-Y2-hAx" sceneMemberID="viewController">
+                <viewController id="d4N-Y2-hAx" customClass="signUp" customModule="Where_You_At" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pxy-VU-1ol"/>
                         <viewControllerLayoutGuide type="bottom" id="TQq-pJ-i9m"/>
@@ -948,6 +951,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="fullName" destination="xcf-Ia-hlq" id="gEF-Jt-GtG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOp-86-IS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

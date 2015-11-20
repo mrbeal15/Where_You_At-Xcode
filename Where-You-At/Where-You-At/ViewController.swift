@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 
     @IBAction func signIn(sender: UIButton) {
         //Make Post request
-        
+        //Alamofire.request(.POST, http://localhost:3000/names", parameters: ["name"] : "\(name.text)"], encoding: .JSON)
     }
 
 }
