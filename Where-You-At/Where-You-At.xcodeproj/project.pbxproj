@@ -17,6 +17,7 @@
 		0950D82A1BFE3B2600D2CD34 /* tag-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 0950D8291BFE3B2600D2CD34 /* tag-line.png */; };
 		0950D82C1BFE57D200D2CD34 /* SignUp-View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0950D82B1BFE57D200D2CD34 /* SignUp-View.xib */; };
 		0950D82E1BFE5FCE00D2CD34 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0950D82D1BFE5FCE00D2CD34 /* View.xib */; };
+		0950D85E1BFEAD5B00D2CD34 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0950D85D1BFEAD5B00D2CD34 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		0950D8291BFE3B2600D2CD34 /* tag-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tag-line.png"; path = "Images.xcassets/tag-line.png"; sourceTree = "<group>"; };
 		0950D82B1BFE57D200D2CD34 /* SignUp-View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SignUp-View.xib"; sourceTree = "<group>"; };
 		0950D82D1BFE5FCE00D2CD34 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		0950D85D1BFEAD5B00D2CD34 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0950D85E1BFEAD5B00D2CD34 /* QuartzCore.framework in Frameworks */,
 				0950D8281BFE346400D2CD34 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +71,7 @@
 		0950D7F91BFE345400D2CD34 = {
 			isa = PBXGroup;
 			children = (
+				0950D85D1BFEAD5B00D2CD34 /* QuartzCore.framework */,
 				0950D8271BFE346400D2CD34 /* CoreLocation.framework */,
 				0950D8041BFE345400D2CD34 /* Where-You-At */,
 				0950D81A1BFE345400D2CD34 /* Where-You-AtTests */,
