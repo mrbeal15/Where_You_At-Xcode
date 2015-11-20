@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -30,20 +31,20 @@
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="NnF-OI-0Or"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="5RI-x6-A7i"/>
-                                <exclude reference="NnF-OI-0Or"/>
                                 <exclude reference="9Wo-i3-hIj"/>
+                                <exclude reference="NnF-OI-0Or"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="5RI-x6-A7i"/>
-                                <include reference="NnF-OI-0Or"/>
                                 <include reference="9Wo-i3-hIj"/>
+                                <include reference="NnF-OI-0Or"/>
                             </mask>
                         </variation>
                     </label>
@@ -112,18 +113,18 @@
                         <exclude reference="0A8-8Z-zsn"/>
                     </mask>
                     <mask key="constraints">
+                        <exclude reference="TWS-Be-8p8"/>
+                        <exclude reference="vCl-X7-1mJ"/>
+                        <exclude reference="FAa-wE-D1Z"/>
+                        <exclude reference="WIG-K2-MKS"/>
+                        <exclude reference="mk0-B2-nAG"/>
+                        <exclude reference="zlE-2W-tAs"/>
+                        <exclude reference="OME-1r-kti"/>
+                        <exclude reference="ugH-Yv-GoB"/>
                         <exclude reference="9sO-lC-lGZ"/>
                         <exclude reference="Cti-eD-9uw"/>
                         <exclude reference="bn7-pM-btn"/>
                         <exclude reference="ksj-26-cOC"/>
-                        <exclude reference="mk0-B2-nAG"/>
-                        <exclude reference="zlE-2W-tAs"/>
-                        <exclude reference="FAa-wE-D1Z"/>
-                        <exclude reference="WIG-K2-MKS"/>
-                        <exclude reference="TWS-Be-8p8"/>
-                        <exclude reference="vCl-X7-1mJ"/>
-                        <exclude reference="OME-1r-kti"/>
-                        <exclude reference="ugH-Yv-GoB"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
@@ -135,18 +136,18 @@
                         <include reference="0A8-8Z-zsn"/>
                     </mask>
                     <mask key="constraints">
+                        <include reference="TWS-Be-8p8"/>
+                        <include reference="vCl-X7-1mJ"/>
+                        <include reference="FAa-wE-D1Z"/>
+                        <include reference="WIG-K2-MKS"/>
+                        <include reference="mk0-B2-nAG"/>
+                        <include reference="zlE-2W-tAs"/>
+                        <include reference="OME-1r-kti"/>
+                        <include reference="ugH-Yv-GoB"/>
                         <include reference="9sO-lC-lGZ"/>
                         <include reference="Cti-eD-9uw"/>
                         <include reference="bn7-pM-btn"/>
                         <include reference="ksj-26-cOC"/>
-                        <include reference="mk0-B2-nAG"/>
-                        <include reference="zlE-2W-tAs"/>
-                        <include reference="FAa-wE-D1Z"/>
-                        <include reference="WIG-K2-MKS"/>
-                        <include reference="TWS-Be-8p8"/>
-                        <include reference="vCl-X7-1mJ"/>
-                        <include reference="OME-1r-kti"/>
-                        <include reference="ugH-Yv-GoB"/>
                     </mask>
                 </variation>
             </view>
