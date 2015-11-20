@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -61,47 +60,18 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag-line" translatesAutoresizingMaskIntoConstraints="NO" id="XkE-8g-kog">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="29" id="1P1-Gu-FHR"/>
-                            <constraint firstAttribute="width" secondItem="XkE-8g-kog" secondAttribute="height" multiplier="96:19" id="G9a-VY-Q89"/>
-                            <constraint firstAttribute="width" secondItem="XkE-8g-kog" secondAttribute="height" multiplier="149:29" id="H1T-fr-hps"/>
-                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="38" id="HHf-uU-50V"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="JXh-Xn-gOa"/>
-                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="29" id="Swh-Av-hQe"/>
-                            <constraint firstAttribute="height" constant="50" id="XQ7-WM-sRi">
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="29" id="1P1-Gu-FHR">
                                 <variation key="heightClass=regular-widthClass=compact" constant="38"/>
                             </constraint>
-                            <constraint firstAttribute="height" constant="134" id="eCs-El-5oJ">
-                                <variation key="heightClass=regular-widthClass=compact" constant="38"/>
-                            </constraint>
-                            <constraint firstAttribute="width" secondItem="XkE-8g-kog" secondAttribute="height" multiplier="96:19" id="mUc-GU-A9C"/>
-                            <constraint firstAttribute="width" secondItem="XkE-8g-kog" secondAttribute="height" multiplier="675:134" id="xPX-TB-jXF"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="1P1-Gu-FHR"/>
-                                <exclude reference="G9a-VY-Q89"/>
-                                <exclude reference="H1T-fr-hps"/>
-                                <exclude reference="HHf-uU-50V"/>
-                                <exclude reference="JXh-Xn-gOa"/>
-                                <exclude reference="Swh-Av-hQe"/>
-                                <exclude reference="XQ7-WM-sRi"/>
-                                <exclude reference="eCs-El-5oJ"/>
-                                <exclude reference="mUc-GU-A9C"/>
-                                <exclude reference="xPX-TB-jXF"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="1P1-Gu-FHR"/>
-                                <include reference="G9a-VY-Q89"/>
-                                <include reference="H1T-fr-hps"/>
-                                <include reference="HHf-uU-50V"/>
-                                <include reference="JXh-Xn-gOa"/>
-                                <include reference="Swh-Av-hQe"/>
-                                <include reference="XQ7-WM-sRi"/>
-                                <include reference="eCs-El-5oJ"/>
-                                <include reference="mUc-GU-A9C"/>
-                                <include reference="xPX-TB-jXF"/>
                             </mask>
                         </variation>
                     </imageView>
