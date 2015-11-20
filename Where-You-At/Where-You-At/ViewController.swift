@@ -21,8 +21,12 @@ class ViewController: UIViewController {
     }
 
     @IBOutlet var username: UITextField!
-
     @IBOutlet var password: UITextField!
+
+    @IBAction func signIn(sender: UIButton) {
+        //Make Post request
+        //Alamofire.request(.POST, http://localhost:3000/names", parameters: ["name"] : "\(name.text)"], encoding: .JSON)
+    }
 
 }
 
