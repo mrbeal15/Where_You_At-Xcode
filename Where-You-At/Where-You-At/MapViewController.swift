@@ -12,6 +12,17 @@ import Alamofire
 import CoreLocation
 import MapKit
 
+class CustomPin : NSObject, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+    init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String){
+        self.coordinate = coordinate
+        self.title = title
+        self.subtitle = subtitle
+    }
+}
+
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     
@@ -54,6 +65,27 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.mapkit.setRegion(region, animated: true)
         
         self.locationManager.stopUpdatingLocation()
+        
+        let url = "http://whereyouat1.herokuapp.com/groups/1"
+        Alamofire.request(.GET, url).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    
+                    for (_, location):(String, JSON) in json {
+                        print(location)
+                        let name = location["first_name"].stringValue, lat = Float(location["lat"].stringValue), lng = Float(location["lng"].stringValue)
+                        let pin = CustomPin(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat!), longitude: CLLocationDegrees(lng!)), title: name, subtitle: "Where you at!")
+                        self.mapkit.addAnnotation(pin)
+                        self.mapkit.centerCoordinate = pin.coordinate
+                    }
+                }
+                
+            case .Failure(let error):
+                print(error)
+            }
+        }
         
         
     }
