@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09354F871C00F5D9003182C3 /* GroupIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09354F861C00F5D9003182C3 /* GroupIndexViewController.swift */; };
 		0950D8081BFE345400D2CD34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0950D8071BFE345400D2CD34 /* AppDelegate.swift */; };
 		0950D80A1BFE345400D2CD34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0950D8091BFE345400D2CD34 /* ViewController.swift */; };
 		0950D80D1BFE345400D2CD34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0950D80B1BFE345400D2CD34 /* Main.storyboard */; };
@@ -21,7 +22,7 @@
 		09825FF61BFFAF6100AB8A69 /* NewUserControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09825FF51BFFAF6100AB8A69 /* NewUserControllerViewController.swift */; };
 		09825FF81BFFB23200AB8A69 /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09825FF71BFFB23200AB8A69 /* signUp.swift */; };
 		09825FFA1BFFB2B800AB8A69 /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09825FF91BFFB2B800AB8A69 /* Invite.swift */; };
-		09825FFC1BFFB33000AB8A69 /* userGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09825FFB1BFFB33000AB8A69 /* userGroups.swift */; };
+		09825FFC1BFFB33000AB8A69 /* GroupsUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09825FFB1BFFB33000AB8A69 /* GroupsUsers.swift */; };
 		099DEBAE1BFFB74F008F735F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 099DEB891BFFB6F4008F735F /* Alamofire.framework */; };
 		099DEBB01BFFB832008F735F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099DEBAF1BFFB832008F735F /* MapViewController.swift */; };
 		D187DEE9669A54C8208A114E /* Pods_Where_You_At.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A173D0A8ACF6634970321A5F /* Pods_Where_You_At.framework */; };
@@ -136,6 +137,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09354F861C00F5D9003182C3 /* GroupIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupIndexViewController.swift; sourceTree = "<group>"; };
 		0950D8021BFE345400D2CD34 /* Where-You-At.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Where-You-At.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0950D8061BFE345400D2CD34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0950D8071BFE345400D2CD34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,7 +156,7 @@
 		09825FF51BFFAF6100AB8A69 /* NewUserControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserControllerViewController.swift; sourceTree = "<group>"; };
 		09825FF71BFFB23200AB8A69 /* signUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
 		09825FF91BFFB2B800AB8A69 /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
-		09825FFB1BFFB33000AB8A69 /* userGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userGroups.swift; sourceTree = "<group>"; };
+		09825FFB1BFFB33000AB8A69 /* GroupsUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsUsers.swift; sourceTree = "<group>"; };
 		099DEB7E1BFFB6F3008F735F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		099DEB961BFFB6FA008F735F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		099DEBAF1BFFB832008F735F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -214,8 +216,9 @@
 				0950D8071BFE345400D2CD34 /* AppDelegate.swift */,
 				0950D8091BFE345400D2CD34 /* ViewController.swift */,
 				0950D80B1BFE345400D2CD34 /* Main.storyboard */,
+				09354F861C00F5D9003182C3 /* GroupIndexViewController.swift */,
 				099DEBAF1BFFB832008F735F /* MapViewController.swift */,
-				09825FFB1BFFB33000AB8A69 /* userGroups.swift */,
+				09825FFB1BFFB33000AB8A69 /* GroupsUsers.swift */,
 				09825FF91BFFB2B800AB8A69 /* Invite.swift */,
 				09825FF71BFFB23200AB8A69 /* signUp.swift */,
 				09825FF51BFFAF6100AB8A69 /* NewUserControllerViewController.swift */,
@@ -567,11 +570,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09825FFC1BFFB33000AB8A69 /* userGroups.swift in Sources */,
+				09825FFC1BFFB33000AB8A69 /* GroupsUsers.swift in Sources */,
 				09825FF61BFFAF6100AB8A69 /* NewUserControllerViewController.swift in Sources */,
 				09825FFA1BFFB2B800AB8A69 /* Invite.swift in Sources */,
 				09825FF81BFFB23200AB8A69 /* signUp.swift in Sources */,
 				0950D80A1BFE345400D2CD34 /* ViewController.swift in Sources */,
+				09354F871C00F5D9003182C3 /* GroupIndexViewController.swift in Sources */,
 				0950D8081BFE345400D2CD34 /* AppDelegate.swift in Sources */,
 				099DEBB01BFFB832008F735F /* MapViewController.swift in Sources */,
 			);
