@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E078ED2E-B970-4404-9639-253B64A2FF84</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Playing</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>81EC0EE54642D6C52C01B9C505EE23CE1939055B</key>
+		<string>https://github.com/ntolch/where-you-at-xcode.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Playing/Playing.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>81EC0EE54642D6C52C01B9C505EE23CE1939055B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ntolch/where-you-at-xcode.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>81EC0EE54642D6C52C01B9C505EE23CE1939055B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>81EC0EE54642D6C52C01B9C505EE23CE1939055B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>where-you-at-xcode</string>
+		</dict>
+	</array>
+</dict>
+</plist>
