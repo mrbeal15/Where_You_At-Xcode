@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 import Alamofire
 
 class GroupIndexViewController: UIViewController, UITableViewDataSource {
@@ -22,47 +21,44 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource {
 ///////////////
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let url = "http://whereyouat1.herokuapp.com/users/1"
-        
-       
-        Alamofire.request(.GET, url).validate().responseJSON { response in
-            switch response.result {
-            case .Success:
-                if let value = response.result.value{
-                    let json = JSON(value)
-                    
-                    for name in json {
-                        repositories.append(Repository(json: name))
-                    }
-                }
-                
-            case .Failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-//        let reposURL = NSURL(string: "http://whereyouat1.herokuapp.com/users/1")
-//        print("***************************")
-//        print(reposURL)
 //        
-//        if let JSONData = NSData(contentsOfURL: reposURL!) {
-//            if let json = try! NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
-//                
-//            }
-//        }
-        
-//        if let JSONData = NSData(contentsOfURL: reposURL!) {
-//            if let json = try! NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
-//                if let reposArray = json["items"] as? [NSDictionary] {
-//                    for item in reposArray {
+//        let url = "http://whereyouat1.herokuapp.com/users/1"
+//        
+//       
+//        Alamofire.request(.GET, url).validate().responseJSON { response in
+//            switch response.result {
+//            case .Success:
+//                if let value = response.result.value{
+//                    for name in value {
 //                        repositories.append(Repository(json: item))
 //                    }
 //                }
+//            case .Failure(let error):
+//                print(error)
 //            }
 //        }
+    
+    
+        let reposURL = NSURL(string: "http://localhost:3000/users/1")
+        print("***************************")
+        print(reposURL)
         
+        if let JSONData = NSData(contentsOfURL: reposURL!) {
+            if let json = try! NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
+                
+            }
+        }
+        
+        if let JSONData = NSData(contentsOfURL: reposURL!) {
+            if let json = try! NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
+                if let reposArray = json["groups"] as? [NSDictionary] {
+                    for item in reposArray {
+                        repositories.append(Repository(json: item))
+                    }
+                }
+            }
+        }
+    }
     
     
     
