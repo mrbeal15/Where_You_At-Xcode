@@ -7,13 +7,32 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class userGroups: UIViewController {
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        let url = "http://whereyouat1.herokuapp.com/users/1"
+        
+        Alamofire.request(.GET, url).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    print(json)
+                }
+                
+            case .Failure(let error):
+                print(error)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
