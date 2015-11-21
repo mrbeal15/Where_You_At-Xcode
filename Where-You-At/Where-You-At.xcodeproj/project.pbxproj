@@ -23,7 +23,7 @@
 		09825FFA1BFFB2B800AB8A69 /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09825FF91BFFB2B800AB8A69 /* Invite.swift */; };
 		09825FFC1BFFB33000AB8A69 /* userGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09825FFB1BFFB33000AB8A69 /* userGroups.swift */; };
 		099DEBAE1BFFB74F008F735F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 099DEB891BFFB6F4008F735F /* Alamofire.framework */; };
-		099DEBB01BFFB832008F735F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099DEBAF1BFFB832008F735F /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		099DEBB01BFFB832008F735F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099DEBAF1BFFB832008F735F /* MapViewController.swift */; };
 		D187DEE9669A54C8208A114E /* Pods_Where_You_At.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A173D0A8ACF6634970321A5F /* Pods_Where_You_At.framework */; };
 /* End PBXBuildFile section */
 
@@ -348,11 +348,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Apprentice;
 				TargetAttributes = {
 					0950D8011BFE345400D2CD34 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = PDT6474VKE;
 					};
 					0950D8161BFE345400D2CD34 = {
 						CreatedOnToolsVersion = 6.2;
@@ -634,6 +635,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -648,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -684,7 +686,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -696,9 +698,13 @@
 			baseConfigurationReference = 53B1E6CAF2B68EE562F4B438 /* Pods-Where-You-At.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Where-You-At/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "WYA.Where-You-At1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -707,9 +713,13 @@
 			baseConfigurationReference = 2EA7FC15D85CA61797ABE770 /* Pods-Where-You-At.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Where-You-At/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "WYA.Where-You-At1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -727,6 +737,7 @@
 				);
 				INFOPLIST_FILE = "Where-You-AtTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "WYA.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Where-You-At.app/Where-You-At";
 			};
@@ -742,6 +753,7 @@
 				);
 				INFOPLIST_FILE = "Where-You-AtTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "WYA.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Where-You-At.app/Where-You-At";
 			};

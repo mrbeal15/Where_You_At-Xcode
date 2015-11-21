@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ewu-mb-N7A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ewu-mb-N7A">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -69,40 +68,6 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc4-BM-RjU">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Sign In">
-                                    <color key="titleColor" red="0.29411765933036804" green="0.95686280727386475" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="15"/>
-                                </variation>
-                                <connections>
-                                    <action selector="signIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZJR-Ac-dNb"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-cY-sVi">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="iaM-19-lrg"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="iaM-19-lrg"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <mask key="constraints">
-                                        <include reference="iaM-19-lrg"/>
-                                    </mask>
-                                </variation>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag-line" translatesAutoresizingMaskIntoConstraints="NO" id="uG3-Gm-uHG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
@@ -134,6 +99,37 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-cY-sVi">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="iaM-19-lrg"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="iaM-19-lrg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <mask key="constraints">
+                                        <include reference="iaM-19-lrg"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc4-BM-RjU">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" red="0.29411765933036804" green="0.95686280727386475" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="15"/>
+                                </variation>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -174,9 +170,9 @@
                             <mask key="subviews">
                                 <exclude reference="K5a-wP-kiD"/>
                                 <exclude reference="gBA-bZ-Spz"/>
-                                <exclude reference="qc4-BM-RjU"/>
-                                <exclude reference="Iav-cY-sVi"/>
                                 <exclude reference="uG3-Gm-uHG"/>
+                                <exclude reference="Iav-cY-sVi"/>
+                                <exclude reference="qc4-BM-RjU"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="4JO-6R-XDb"/>
@@ -198,9 +194,9 @@
                             <mask key="subviews">
                                 <include reference="K5a-wP-kiD"/>
                                 <include reference="gBA-bZ-Spz"/>
-                                <include reference="qc4-BM-RjU"/>
-                                <include reference="Iav-cY-sVi"/>
                                 <include reference="uG3-Gm-uHG"/>
+                                <include reference="Iav-cY-sVi"/>
+                                <include reference="qc4-BM-RjU"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="4JO-6R-XDb"/>
@@ -667,7 +663,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b8Q-jL-Gqn">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b8Q-jL-Gqn">
                                 <rect key="frame" x="180" y="218" width="240" height="128"/>
                             </mapView>
                         </subviews>
@@ -1133,92 +1129,6 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHa-Zk-9l9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="513" y="433.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tGN-LW-wzP">
-            <objects>
-                <viewController id="Rhc-Oa-YQP" customClass="ViewController" customModule="Where_You_At" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BD2-J3-fnl"/>
-                        <viewControllerLayoutGuide type="bottom" id="kXI-bV-1BY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OKk-Nh-a0j">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag-line" translatesAutoresizingMaskIntoConstraints="NO" id="nQz-zP-wFg">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="29" id="8yS-YJ-KF0"/>
-                                    <constraint firstAttribute="width" secondItem="nQz-zP-wFg" secondAttribute="height" multiplier="96:19" id="IP2-ZV-02v"/>
-                                    <constraint firstAttribute="height" constant="50" id="L5g-uF-qaF">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="38"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" secondItem="nQz-zP-wFg" secondAttribute="height" multiplier="149:29" id="N1b-RP-EFa"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="29" id="ZWW-Tg-iet"/>
-                                    <constraint firstAttribute="width" secondItem="nQz-zP-wFg" secondAttribute="height" multiplier="675:134" id="aAY-mi-aMz"/>
-                                    <constraint firstAttribute="width" secondItem="nQz-zP-wFg" secondAttribute="height" multiplier="96:19" id="lXz-nv-pM3"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="xG3-K9-Qdd"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="8yS-YJ-KF0"/>
-                                        <exclude reference="IP2-ZV-02v"/>
-                                        <exclude reference="L5g-uF-qaF"/>
-                                        <exclude reference="N1b-RP-EFa"/>
-                                        <exclude reference="ZWW-Tg-iet"/>
-                                        <exclude reference="aAY-mi-aMz"/>
-                                        <exclude reference="lXz-nv-pM3"/>
-                                        <exclude reference="xG3-K9-Qdd"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="8yS-YJ-KF0"/>
-                                        <include reference="IP2-ZV-02v"/>
-                                        <include reference="L5g-uF-qaF"/>
-                                        <exclude reference="N1b-RP-EFa"/>
-                                        <exclude reference="ZWW-Tg-iet"/>
-                                        <exclude reference="aAY-mi-aMz"/>
-                                        <exclude reference="lXz-nv-pM3"/>
-                                        <exclude reference="xG3-K9-Qdd"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="nQz-zP-wFg" secondAttribute="centerX" id="Iy0-yA-4Um"/>
-                            <constraint firstItem="nQz-zP-wFg" firstAttribute="top" secondItem="OKk-Nh-a0j" secondAttribute="topMargin" constant="18" id="Kpo-Qk-lqU"/>
-                            <constraint firstAttribute="centerX" secondItem="nQz-zP-wFg" secondAttribute="centerX" id="sUc-76-031"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="nQz-zP-wFg"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="Iy0-yA-4Um"/>
-                                <exclude reference="Kpo-Qk-lqU"/>
-                                <exclude reference="sUc-76-031"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="nQz-zP-wFg"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="Iy0-yA-4Um"/>
-                                <include reference="Kpo-Qk-lqU"/>
-                                <include reference="sUc-76-031"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PIT-C5-A4u" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="513" y="433.5"/>
         </scene>

@@ -73,12 +73,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 if let value = response.result.value {
                     let json = JSON(value)
                     
+                    
                     for (_, location):(String, JSON) in json {
                         print(location)
                         let name = location["first_name"].stringValue, lat = Float(location["lat"].stringValue), lng = Float(location["lng"].stringValue)
                         let pin = CustomPin(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat!), longitude: CLLocationDegrees(lng!)), title: name, subtitle: "Where you at!")
                         self.mapkit.addAnnotation(pin)
                         self.mapkit.centerCoordinate = pin.coordinate
+                        
+                        func startMonitoringSignificantLocationChanges(){
+                            self.mapkit.addAnnotation(pin)
+                        }
                     }
                 }
                 
@@ -87,8 +92,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
         }
         
-        
     }
+    
+    func startUpdatingLocation(){
+        print("Updating...")
+    };
+    
+    
     
     func locationmanager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus){
         if case .AuthorizedWhenInUse = status {
