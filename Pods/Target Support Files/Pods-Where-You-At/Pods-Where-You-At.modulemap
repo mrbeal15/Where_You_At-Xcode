@@ -1,0 +1,6 @@
+framework module Pods_Where_You_At {
+  umbrella header "Pods-Where-You-At-umbrella.h"
+
+  export *
+  module * { export * }
+}
