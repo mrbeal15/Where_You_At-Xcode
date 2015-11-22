@@ -9,8 +9,22 @@
 import UIKit
 import Alamofire
 
-class GroupIndexViewController: UIViewController, UITableViewDataSource {
 
+class Repository {
+    
+    var name: String?
+    var description: String?
+    var html_url: String?
+    
+    init(json: NSDictionary) {
+        self.name = json["name"] as? String
+        self.description = json["description"] as? String
+        self.html_url = json["html_url"] as? String
+    }
+}
+
+class GroupIndexViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -18,63 +32,24 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource {
     }
     
     
-///////////////
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        
-//        let url = "http://whereyouat1.herokuapp.com/users/1"
-//        
-//       
-//        Alamofire.request(.GET, url).validate().responseJSON { response in
-//            switch response.result {
-//            case .Success:
-//                if let value = response.result.value{
-//                    for name in value {
-//                        repositories.append(Repository(json: item))
-//                    }
-//                }
-//            case .Failure(let error):
-//                print(error)
-//            }
-//        }
-    
-    
-        let reposURL = NSURL(string: "http://localhost:3000/users/1")
-        print("***************************")
-        print(reposURL)
+        
+        let reposURL = NSURL(string: "https://api.github.com/search/repositories?q=learn+swift+language:swift&sort=stars&order=desc")
         
         if let JSONData = NSData(contentsOfURL: reposURL!) {
             if let json = try! NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
-                
-            }
-        }
-        
-        if let JSONData = NSData(contentsOfURL: reposURL!) {
-            if let json = try! NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
-                if let reposArray = json["groups"] as? [NSDictionary] {
+                if let reposArray = json["items"] as? [NSDictionary]
+                {
                     for item in reposArray {
                         repositories.append(Repository(json: item))
+                        
                     }
                 }
             }
         }
     }
-    
-    
-    
-    class Repository {
-        
-        var name: String?
-        var description: String?
-        var html_url: String?
-        
-        init(json: NSDictionary) {
-            self.name = json["name"] as? String
-            self.description = json["description"] as? String
-            self.html_url = json["html_url"] as? String
-        }
-    }
-    
     
     var repositories = [Repository]()
     
@@ -82,15 +57,33 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource {
         return repositories.count
     }
     
+    @IBAction func performSequeWithIdentifier(sender: UIButton) {
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("GroupName", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = repositories[indexPath.row].name
+        var groupLabel = cell.textLabel?.text = repositories[indexPath.row].name
         cell.detailTextLabel?.text = repositories[indexPath.row].description
+        func openGroup(sender: UIButton!) {
+            func performSegueWithIdentifier(sender: UIButton!){};
+        }
+        
         return cell
+        
+        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            var secondViewController:userGroups = segue.destinationViewController as! userGroups
+            //this is where we'll need to send 
+        }
     }
+   
 
-
-
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let selectedRow = tableView.cellForRowAtIndexPath(indexPath)!
+        
+    }
+    
+    
 
 ////////////
     
