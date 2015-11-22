@@ -405,30 +405,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9L-jG-IMa">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ozb-hO-W1u"/>
-                                </constraints>
-                                <state key="normal" title="Create">
-                                    <color key="titleColor" red="0.0" green="0.9450981021" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Ozb-hO-W1u"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="15"/>
-                                    <mask key="constraints">
-                                        <include reference="Ozb-hO-W1u"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="createGroup:" destination="BQg-rk-0j7" eventType="touchUpInside" id="dEW-cc-mN8"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Group" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ith-ru-Vhz">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <animations/>
@@ -455,6 +431,31 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9L-jG-IMa">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ozb-hO-W1u"/>
+                                </constraints>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" red="0.0" green="0.9450981021" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ozb-hO-W1u"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="15"/>
+                                    <mask key="constraints">
+                                        <include reference="Ozb-hO-W1u"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="createGroup:" destination="BQg-rk-0j7" eventType="touchUpInside" id="dEW-cc-mN8"/>
+                                    <segue destination="x4R-Kn-GVI" kind="show" identifier="createGroupToGroups" id="htB-mB-iXv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -488,8 +489,8 @@
                             <mask key="subviews">
                                 <exclude reference="CRz-ci-0zp"/>
                                 <exclude reference="QlL-Sa-TIS"/>
-                                <exclude reference="l9L-jG-IMa"/>
                                 <exclude reference="Ith-ru-Vhz"/>
+                                <exclude reference="l9L-jG-IMa"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="AIB-II-GE1"/>
@@ -510,8 +511,8 @@
                             <mask key="subviews">
                                 <include reference="CRz-ci-0zp"/>
                                 <include reference="QlL-Sa-TIS"/>
-                                <include reference="l9L-jG-IMa"/>
                                 <include reference="Ith-ru-Vhz"/>
+                                <include reference="l9L-jG-IMa"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="AIB-II-GE1"/>
@@ -544,7 +545,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3k2-Zc-mAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2679" y="432.75"/>
+            <point key="canvasLocation" x="2682" y="453.75"/>
         </scene>
         <!--Group Members-->
         <scene sceneID="qj3-SA-OV8">
@@ -967,32 +968,32 @@
                                 <exclude reference="xcf-Ia-hlq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1Ts-th-ZuD"/>
-                                <exclude reference="B9f-fA-VMh"/>
-                                <exclude reference="Cnx-b7-48K"/>
-                                <exclude reference="IYK-Ig-ZLH"/>
+                                <exclude reference="Lwt-8X-t9C"/>
+                                <exclude reference="eBZ-r8-Qrd"/>
                                 <exclude reference="5xX-Yb-nCc"/>
                                 <exclude reference="Pmy-cM-iRu"/>
                                 <exclude reference="V5x-87-ZTS"/>
                                 <exclude reference="WbH-cQ-rjY"/>
                                 <exclude reference="fVQ-rr-9dx"/>
-                                <exclude reference="5Qb-lm-AHi"/>
+                                <exclude reference="8wC-Be-dew"/>
+                                <exclude reference="BjW-Td-7Jb"/>
+                                <exclude reference="My8-O4-bKw"/>
+                                <exclude reference="Og1-6r-jhL"/>
+                                <exclude reference="u5m-A0-OoC"/>
                                 <exclude reference="GVz-TW-fRL"/>
                                 <exclude reference="HB3-Ps-lei"/>
                                 <exclude reference="TP0-N1-t3s"/>
                                 <exclude reference="f2i-cR-1yb"/>
                                 <exclude reference="hxF-FN-t77"/>
                                 <exclude reference="ie0-Tb-WGB"/>
-                                <exclude reference="Lwt-8X-t9C"/>
-                                <exclude reference="eBZ-r8-Qrd"/>
-                                <exclude reference="8wC-Be-dew"/>
-                                <exclude reference="BjW-Td-7Jb"/>
-                                <exclude reference="My8-O4-bKw"/>
-                                <exclude reference="Og1-6r-jhL"/>
-                                <exclude reference="u5m-A0-OoC"/>
+                                <exclude reference="5Qb-lm-AHi"/>
                                 <exclude reference="FZ2-rZ-ptV"/>
                                 <exclude reference="hdv-4W-fyX"/>
                                 <exclude reference="lZP-vs-HvZ"/>
+                                <exclude reference="1Ts-th-ZuD"/>
+                                <exclude reference="B9f-fA-VMh"/>
+                                <exclude reference="Cnx-b7-48K"/>
+                                <exclude reference="IYK-Ig-ZLH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1006,32 +1007,32 @@
                                 <include reference="xcf-Ia-hlq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1Ts-th-ZuD"/>
-                                <include reference="B9f-fA-VMh"/>
-                                <exclude reference="Cnx-b7-48K"/>
-                                <include reference="IYK-Ig-ZLH"/>
+                                <include reference="Lwt-8X-t9C"/>
+                                <include reference="eBZ-r8-Qrd"/>
                                 <exclude reference="5xX-Yb-nCc"/>
                                 <exclude reference="Pmy-cM-iRu"/>
                                 <include reference="V5x-87-ZTS"/>
                                 <include reference="WbH-cQ-rjY"/>
                                 <exclude reference="fVQ-rr-9dx"/>
-                                <include reference="5Qb-lm-AHi"/>
+                                <include reference="8wC-Be-dew"/>
+                                <exclude reference="BjW-Td-7Jb"/>
+                                <include reference="My8-O4-bKw"/>
+                                <include reference="Og1-6r-jhL"/>
+                                <include reference="u5m-A0-OoC"/>
                                 <include reference="GVz-TW-fRL"/>
                                 <include reference="HB3-Ps-lei"/>
                                 <include reference="TP0-N1-t3s"/>
                                 <include reference="f2i-cR-1yb"/>
                                 <include reference="hxF-FN-t77"/>
                                 <exclude reference="ie0-Tb-WGB"/>
-                                <include reference="Lwt-8X-t9C"/>
-                                <include reference="eBZ-r8-Qrd"/>
-                                <include reference="8wC-Be-dew"/>
-                                <exclude reference="BjW-Td-7Jb"/>
-                                <include reference="My8-O4-bKw"/>
-                                <include reference="Og1-6r-jhL"/>
-                                <include reference="u5m-A0-OoC"/>
+                                <include reference="5Qb-lm-AHi"/>
                                 <include reference="FZ2-rZ-ptV"/>
                                 <include reference="hdv-4W-fyX"/>
                                 <include reference="lZP-vs-HvZ"/>
+                                <exclude reference="1Ts-th-ZuD"/>
+                                <include reference="B9f-fA-VMh"/>
+                                <exclude reference="Cnx-b7-48K"/>
+                                <include reference="IYK-Ig-ZLH"/>
                             </mask>
                         </variation>
                     </view>
@@ -1040,7 +1041,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Groups" id="Ak5-xE-b68">
                             <color key="tintColor" red="0.0" green="0.94509810209274292" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
-                                <segue destination="x4R-Kn-GVI" kind="show" id="uMG-pP-vjj"/>
+                                <segue destination="x4R-Kn-GVI" kind="show" identifier="signUpToGroups" id="uMG-pP-vjj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1283,8 +1284,8 @@
         <image name="tag-line" width="675" height="134"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cXp-aE-Guz"/>
-        <segue reference="uMG-pP-vjj"/>
         <segue reference="2la-CN-iG5"/>
+        <segue reference="htB-mB-iXv"/>
+        <segue reference="cXp-aE-Guz"/>
     </inferredMetricsTieBreakers>
 </document>
