@@ -110,6 +110,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="signIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jeD-Nk-mYs"/>
+                                    <segue destination="x4R-Kn-GVI" kind="show" identifier="toGroups" id="ya4-s0-q8P"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-cY-sVi">
@@ -1214,7 +1215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDf-Id-cB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2448" y="432.75"/>
+            <point key="canvasLocation" x="1678.5" y="1150.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VG4-uh-iPP">
@@ -1240,7 +1241,8 @@
         <image name="tag-line" width="675" height="134"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YMu-xm-gu8"/>
+        <segue reference="ya4-s0-q8P"/>
         <segue reference="2la-CN-iG5"/>
+        <segue reference="YMu-xm-gu8"/>
     </inferredMetricsTieBreakers>
 </document>
