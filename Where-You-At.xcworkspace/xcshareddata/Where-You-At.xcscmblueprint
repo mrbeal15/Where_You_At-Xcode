@@ -1,5 +1,8 @@
 {
+<<<<<<< HEAD:Where-You-At/Where-You-At.xcworkspace/xcshareddata/Where-You-At.xcscmblueprint
   "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1CDAD1C8F3A8860E015F4C923060B4D0EE711A53",
+=======
+>>>>>>> origin/master:Where-You-At.xcworkspace/xcshareddata/Where-You-At.xcscmblueprint
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
@@ -10,9 +13,14 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1CED402F-4D04-4CD4-9B5E-2BA440E97C6D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+<<<<<<< HEAD:Where-You-At/Where-You-At.xcworkspace/xcshareddata/Where-You-At.xcscmblueprint
     "67620B5EFA902936DF04070AF595B76AB0333747" : "Where-You-At\/Alamofire\/",
     "81EC0EE54642D6C52C01B9C505EE23CE1939055B" : "",
     "1CDAD1C8F3A8860E015F4C923060B4D0EE711A53" : "Where-You-At\/"
+=======
+    "81EC0EE54642D6C52C01B9C505EE23CE1939055B" : "",
+    "67620B5EFA902936DF04070AF595B76AB0333747" : "Where-You-At\/Alamofire\/"
+>>>>>>> origin/master:Where-You-At.xcworkspace/xcshareddata/Where-You-At.xcscmblueprint
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Where-You-At",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
