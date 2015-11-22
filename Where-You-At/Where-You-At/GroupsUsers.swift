@@ -1,5 +1,5 @@
 //
-//  Invite.swift
+//  userGroups.swift
 //  Where-You-At
 //
 //  Created by Apprentice on 11/20/15.
@@ -7,21 +7,46 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
-class Invite: UIViewController {
+class userGroups: UIViewController {
 
+
+    @IBOutlet var groupName: UILabel!
+    
+    var outputMessage = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        groupName.text = outputMessage
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        let url = "http://whereyouat1.herokuapp.com/users/1"
+        
+        Alamofire.request(.GET, url).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value);
+                    
+                }
+                
+            case .Failure(let error):
+                print(error)
+            }
+        }
+        
     }
 
-    @IBOutlet var invite: UITextField!
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*

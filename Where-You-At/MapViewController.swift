@@ -81,6 +81,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                         self.mapkit.addAnnotation(pin)
                         self.mapkit.centerCoordinate = pin.coordinate
                         
+    
                     }
                 }
                 
@@ -91,7 +92,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
     }
     
-
+    
     
     
     func locationmanager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus){

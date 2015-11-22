@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 class ViewController: UIViewController {
 
     
@@ -24,10 +25,10 @@ class ViewController: UIViewController {
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
 
-//    @IBAction func signIn(sender: UIButton) {
-        //Make Post request
-//        Alamofire.request(.POST, "http://localhost:3000/names", parameters: ["name"] : "\(name.text)"], encoding: .JSON)
-//    }
+    @IBAction func signIn(sender: UIButton) {
+        Alamofire.request(.POST, "http://localhost:3000/login",parameters: ["email" : "\(username.text!)", "password" : "\(password.text!)"], encoding: .JSON)
+            .responseJSON { response in debugPrint(response)}
+    }
 
 }
 

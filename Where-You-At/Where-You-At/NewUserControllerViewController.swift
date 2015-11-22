@@ -1,5 +1,5 @@
 //
-//  Invite.swift
+//  NewUserControllerViewController.swift
 //  Where-You-At
 //
 //  Created by Apprentice on 11/20/15.
@@ -8,16 +8,15 @@
 
 import UIKit
 
-class Invite: UIViewController {
+class NewUserControllerViewController: UIViewController {
 
+    @IBOutlet var Label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    @IBOutlet var invite: UITextField!
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
