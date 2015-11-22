@@ -1,16 +1,16 @@
 //
-//  signUp.swift
+//  NewGroupViewController.swift
 //  Where-You-At
 //
-//  Created by Apprentice on 11/20/15.
+//  Created by Apprentice on 11/22/15.
 //  Copyright © 2015 Apprentice. All rights reserved.
 //
 
 import UIKit
-import SwiftyJSON
 import Alamofire
+import SwiftyJSON
 
-class signUp: UIViewController {
+class NewGroupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,18 +23,17 @@ class signUp: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBOutlet var firstname: UITextField!
+    @IBOutlet var groupname: UITextField!
+    @IBOutlet var event: UITextField!
     
-    @IBOutlet var lastname: UITextField!
-    @IBOutlet var username: UITextField!
     
-    @IBOutlet var password: UITextField!
-    @IBAction func submit(sender: UIButton) {
-        Alamofire.request(.POST, "http://localhost:3000/users", parameters: ["first_name": "\(firstname.text!)", "last_name": "\(lastname.text!)", "email": "\(username.text!)", "password": "\(password.text!)"])
+    @IBAction func createGroup(sender: UIButton) {
+        let ns = NSUserDefaults.standardUserDefaults()
+        let id = ns.objectForKey("id")
+        
+        Alamofire.request(.POST, "http://localhost:3000/groups", parameters: ["name": "\(groupname.text!)", "event": "\(event.text!)", "id": "\(id!)"])
     }
-    
-    
+
     /*
     // MARK: - Navigation
 
