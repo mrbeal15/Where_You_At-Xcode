@@ -223,7 +223,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Sign Up" id="PhO-s5-GPK">
                             <color key="tintColor" red="0.0" green="0.94509810209274292" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
-                                <segue destination="d4N-Y2-hAx" kind="show" id="PTc-h1-ebU"/>
+                                <segue destination="d4N-Y2-hAx" kind="show" identifier="toSignUp" id="PTc-h1-ebU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1241,7 +1241,7 @@
         <image name="tag-line" width="675" height="134"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ya4-s0-q8P"/>
+        <segue reference="uMG-pP-vjj"/>
         <segue reference="2la-CN-iG5"/>
         <segue reference="YMu-xm-gu8"/>
     </inferredMetricsTieBreakers>
