@@ -81,9 +81,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                         self.mapkit.addAnnotation(pin)
                         self.mapkit.centerCoordinate = pin.coordinate
                         
-                        func startMonitoringSignificantLocationChanges(){
-                            self.mapkit.addAnnotation(pin)
-                        }
+    
                     }
                 }
                 
@@ -94,9 +92,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
     }
     
-    func startUpdatingLocation(){
-        print("Updating...")
-    };
     
     
     

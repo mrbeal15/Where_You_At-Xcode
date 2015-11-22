@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class Invite: UIViewController {
 
@@ -23,7 +25,12 @@ class Invite: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet var email: UITextField!
 
+    @IBAction func addMember(sender: UIButton) {
+        Alamofire.request(.POST, "http://localhost:3000/users", parameters: ["email": "\(email.text!)"])
+        
+    }
     /*
     // MARK: - Navigation
 

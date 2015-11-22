@@ -12,7 +12,9 @@ class userGroups: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let ns = NSUserDefaults.standardUserDefaults()
+        let id = ns.objectForKey("id")
+        print("============\(id!)=================")
         // Do any additional setup after loading the view.
     }
 
@@ -20,6 +22,8 @@ class userGroups: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     /*
