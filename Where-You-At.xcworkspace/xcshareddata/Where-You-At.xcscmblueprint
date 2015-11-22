@@ -1,20 +1,36 @@
 {
+<<<<<<< HEAD:Where-You-At/Where-You-At.xcworkspace/xcshareddata/Where-You-At.xcscmblueprint
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1CDAD1C8F3A8860E015F4C923060B4D0EE711A53",
+=======
+>>>>>>> origin/master:Where-You-At.xcworkspace/xcshareddata/Where-You-At.xcscmblueprint
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "67620B5EFA902936DF04070AF595B76AB0333747" : 0,
     "81EC0EE54642D6C52C01B9C505EE23CE1939055B" : 0,
-    "67620B5EFA902936DF04070AF595B76AB0333747" : 0
+    "1CDAD1C8F3A8860E015F4C923060B4D0EE711A53" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1CED402F-4D04-4CD4-9B5E-2BA440E97C6D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+<<<<<<< HEAD:Where-You-At/Where-You-At.xcworkspace/xcshareddata/Where-You-At.xcscmblueprint
+    "67620B5EFA902936DF04070AF595B76AB0333747" : "Where-You-At\/Alamofire\/",
+    "81EC0EE54642D6C52C01B9C505EE23CE1939055B" : "",
+    "1CDAD1C8F3A8860E015F4C923060B4D0EE711A53" : "Where-You-At\/"
+=======
     "81EC0EE54642D6C52C01B9C505EE23CE1939055B" : "",
     "67620B5EFA902936DF04070AF595B76AB0333747" : "Where-You-At\/Alamofire\/"
+>>>>>>> origin/master:Where-You-At.xcworkspace/xcshareddata/Where-You-At.xcscmblueprint
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Where-You-At",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Where-You-At.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mrbeal15\/Where_You_At-Xcode.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1CDAD1C8F3A8860E015F4C923060B4D0EE711A53"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
