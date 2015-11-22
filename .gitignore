@@ -1,3 +1,21 @@
 Where-You-At.xcodeproj/project.xcworkspace/xcuserdata/
 
 */xcdebugger/
+.DS_Store
+/build
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.move1v3
+*.move2v3
+!default.move2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+profile
+*.moved-aside
+DerivedData
+.idea/
+Pods
