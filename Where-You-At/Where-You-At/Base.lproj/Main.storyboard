@@ -110,7 +110,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="signIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jeD-Nk-mYs"/>
-                                    <segue destination="x4R-Kn-GVI" kind="show" identifier="toGroups" id="ya4-s0-q8P"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-cY-sVi">
@@ -230,11 +229,12 @@
                     <connections>
                         <outlet property="password" destination="gBA-bZ-Spz" id="M4B-oO-bI4"/>
                         <outlet property="username" destination="Iav-cY-sVi" id="9MZ-fr-Y86"/>
+                        <segue destination="x4R-Kn-GVI" kind="show" identifier="toGroups" id="xjv-yy-pXz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141.5" y="433.5"/>
+            <point key="canvasLocation" x="1557" y="189"/>
         </scene>
         <!--Invite-->
         <scene sceneID="96x-Cn-NTA">
@@ -375,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVq-EK-HrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3747" y="433.5"/>
+            <point key="canvasLocation" x="3159" y="894"/>
         </scene>
         <!--New Group View Controller-->
         <scene sceneID="1Yk-A7-uAC">
@@ -559,14 +559,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gn-ah-Q9E">
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gn-ah-Q9E">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="22"/>
+                                    <rect key="frame" x="146" y="84" width="163" height="30"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFQ-M6-sWh">
@@ -574,7 +575,9 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.9450981021" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Nrl-1B-ebq"/>
+                                    <constraint firstAttribute="height" constant="21" id="Nrl-1B-ebq">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="23"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="23" id="TDO-tl-DdX"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="21" id="TLM-Tw-F06"/>
                                     <constraint firstAttribute="height" constant="23" id="uiE-D6-oym"/>
@@ -597,8 +600,9 @@
                                         <exclude reference="uiE-D6-oym"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="24"/>
+                                    <rect key="frame" x="100" y="87" width="23" height="23"/>
                                     <mask key="constraints">
                                         <include reference="Nrl-1B-ebq"/>
                                         <include reference="TDO-tl-DdX"/>
