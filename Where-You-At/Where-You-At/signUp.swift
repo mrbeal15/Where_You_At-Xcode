@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class signUp: UIViewController {
 
@@ -22,16 +24,31 @@ class signUp: UIViewController {
     }
     
 
-    @IBOutlet var fullName: UITextField!
+    @IBOutlet var firstname: UITextField!
+    @IBOutlet var lastname: UITextField!
+    @IBOutlet var username: UITextField!
+    @IBOutlet var password: UITextField!
     
-    /*
-    // MARK: - Navigation
+    @IBAction func submit(sender: UIButton) {
+        Alamofire.request(.POST, "http://localhost:3000/users", parameters: ["first_name": "\(firstname.text!)", "last_name": "\(lastname.text!)", "email": "\(username.text!)", "password": "\(password.text!)"])
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        print(json["status"])
+                        print("SUCCESS")
+                        self.performSegueWithIdentifier("signUpToGroups", sender: self)
+                    }
+                default: break
+                }
+                
+                
+//                case .Failure(let error):
+//                    print(error)
+//                }
+            }
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

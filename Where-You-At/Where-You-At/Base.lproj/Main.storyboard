@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ewu-mb-N7A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ewu-mb-N7A">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -99,6 +99,20 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc4-BM-RjU">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" red="0.29411765933036804" green="0.95686280727386475" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="15"/>
+                                </variation>
+                                <connections>
+                                    <action selector="signIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jeD-Nk-mYs"/>
+                                    <segue destination="x4R-Kn-GVI" kind="show" identifier="toGroups" id="ya4-s0-q8P"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-cY-sVi">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <animations/>
@@ -120,16 +134,6 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc4-BM-RjU">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Sign In">
-                                    <color key="titleColor" red="0.29411765933036804" green="0.95686280727386475" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="15"/>
-                                </variation>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -171,8 +175,8 @@
                                 <exclude reference="K5a-wP-kiD"/>
                                 <exclude reference="gBA-bZ-Spz"/>
                                 <exclude reference="uG3-Gm-uHG"/>
-                                <exclude reference="Iav-cY-sVi"/>
                                 <exclude reference="qc4-BM-RjU"/>
+                                <exclude reference="Iav-cY-sVi"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="4JO-6R-XDb"/>
@@ -195,8 +199,8 @@
                                 <include reference="K5a-wP-kiD"/>
                                 <include reference="gBA-bZ-Spz"/>
                                 <include reference="uG3-Gm-uHG"/>
-                                <include reference="Iav-cY-sVi"/>
                                 <include reference="qc4-BM-RjU"/>
+                                <include reference="Iav-cY-sVi"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="4JO-6R-XDb"/>
@@ -219,7 +223,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Sign Up" id="PhO-s5-GPK">
                             <color key="tintColor" red="0.0" green="0.94509810209274292" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
-                                <segue destination="d4N-Y2-hAx" kind="show" id="PTc-h1-ebU"/>
+                                <segue destination="d4N-Y2-hAx" kind="show" identifier="toSignUp" id="PTc-h1-ebU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -373,10 +377,10 @@
             </objects>
             <point key="canvasLocation" x="3957" y="924"/>
         </scene>
-        <!--New User Controller View Controller-->
+        <!--New Group View Controller-->
         <scene sceneID="1Yk-A7-uAC">
             <objects>
-                <viewController id="BQg-rk-0j7" customClass="NewUserControllerViewController" customModule="Where_You_At" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BQg-rk-0j7" customClass="NewGroupViewController" customModule="Where_You_At" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7B3-G9-ahL"/>
                         <viewControllerLayoutGuide type="bottom" id="T8L-uq-WQI"/>
@@ -401,27 +405,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9L-jG-IMa">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ozb-hO-W1u"/>
-                                </constraints>
-                                <state key="normal" title="Create">
-                                    <color key="titleColor" red="0.0" green="0.9450981021" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Ozb-hO-W1u"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="15"/>
-                                    <mask key="constraints">
-                                        <include reference="Ozb-hO-W1u"/>
-                                    </mask>
-                                </variation>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Group" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ith-ru-Vhz">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <animations/>
@@ -448,6 +431,31 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9L-jG-IMa">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ozb-hO-W1u"/>
+                                </constraints>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" red="0.0" green="0.9450981021" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ozb-hO-W1u"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="15"/>
+                                    <mask key="constraints">
+                                        <include reference="Ozb-hO-W1u"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="createGroup:" destination="BQg-rk-0j7" eventType="touchUpInside" id="dEW-cc-mN8"/>
+                                    <segue destination="x4R-Kn-GVI" kind="show" identifier="createGroupToGroups" id="htB-mB-iXv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -481,8 +489,8 @@
                             <mask key="subviews">
                                 <exclude reference="CRz-ci-0zp"/>
                                 <exclude reference="QlL-Sa-TIS"/>
-                                <exclude reference="l9L-jG-IMa"/>
                                 <exclude reference="Ith-ru-Vhz"/>
+                                <exclude reference="l9L-jG-IMa"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="AIB-II-GE1"/>
@@ -503,8 +511,8 @@
                             <mask key="subviews">
                                 <include reference="CRz-ci-0zp"/>
                                 <include reference="QlL-Sa-TIS"/>
-                                <include reference="l9L-jG-IMa"/>
                                 <include reference="Ith-ru-Vhz"/>
+                                <include reference="l9L-jG-IMa"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="AIB-II-GE1"/>
@@ -530,10 +538,18 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="event" destination="QlL-Sa-TIS" id="OmU-RO-yvf"/>
+                        <outlet property="groupname" destination="CRz-ci-0zp" id="7Wq-RM-yW8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3k2-Zc-mAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="3172.5" y="917.25"/>
+=======
+            <point key="canvasLocation" x="2682" y="453.75"/>
+>>>>>>> 3e5584d596a67aae648cb62c804fc8bc0df590d3
         </scene>
         <!--Group Members-->
         <scene sceneID="qj3-SA-OV8">
@@ -595,6 +611,7 @@
                                     </mask>
                                 </variation>
                             </button>
+<<<<<<< HEAD
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dMs-Pq-3Fn">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -619,6 +636,13 @@
                                         <exclude reference="WbG-eE-57u"/>
                                         <exclude reference="zpt-ND-IZV"/>
                                     </mask>
+=======
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dl8-VZ-4sQ">
+                                <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
+                                <animations/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="60" y="223" width="303" height="383"/>
+>>>>>>> 3e5584d596a67aae648cb62c804fc8bc0df590d3
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
@@ -629,6 +653,7 @@
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OT-Oi-PtL">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -715,6 +740,7 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b8Q-jL-Gqn">
                                 <rect key="frame" x="180" y="218" width="240" height="128"/>
+                                <animations/>
                             </mapView>
                         </subviews>
                         <animations/>
@@ -798,27 +824,10 @@
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="15"/>
                                 </variation>
+                                <connections>
+                                    <action selector="submit:" destination="d4N-Y2-hAx" eventType="touchUpInside" id="Lwm-ZJ-9ay"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-Ia-hlq">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="teR-v4-hcu"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="teR-v4-hcu"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="teR-v4-hcu"/>
-                                    </mask>
-                                </variation>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag-line" translatesAutoresizingMaskIntoConstraints="NO" id="OII-zK-vzW">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
@@ -886,6 +895,45 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BC3-p0-Fdl">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="4g6-c7-lSs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4g6-c7-lSs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="4g6-c7-lSs"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-Ia-hlq">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="teR-v4-hcu"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="teR-v4-hcu"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="teR-v4-hcu"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -893,6 +941,7 @@
                             <constraint firstItem="OII-zK-vzW" firstAttribute="top" secondItem="pxy-VU-1ol" secondAttribute="bottom" constant="24" id="1Ts-th-ZuD">
                                 <variation key="heightClass=regular-widthClass=compact" constant="29"/>
                             </constraint>
+                            <constraint firstItem="BC3-p0-Fdl" firstAttribute="centerX" secondItem="S8q-PO-dUv" secondAttribute="centerX" id="5Qb-lm-AHi"/>
                             <constraint firstAttribute="centerX" secondItem="sj5-Xz-dTF" secondAttribute="centerX" id="5xX-Yb-nCc">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-0.5"/>
                             </constraint>
@@ -909,6 +958,9 @@
                             <constraint firstAttribute="centerX" secondItem="X66-5k-RbO" secondAttribute="centerX" id="FZ2-rZ-ptV"/>
                             <constraint firstAttribute="centerX" secondItem="xcf-Ia-hlq" secondAttribute="centerX" id="GVz-TW-fRL">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="xcf-Ia-hlq" firstAttribute="top" secondItem="BC3-p0-Fdl" secondAttribute="bottom" constant="19" id="HB3-Ps-lei">
+                                <variation key="heightClass=regular-widthClass=compact" constant="12"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="OII-zK-vzW" secondAttribute="centerX" id="IYK-Ig-ZLH"/>
                             <constraint firstItem="l9W-TC-oL3" firstAttribute="top" secondItem="sj5-Xz-dTF" secondAttribute="bottom" constant="94" id="Lwt-8X-t9C">
@@ -952,9 +1004,10 @@
                                 <exclude reference="l9W-TC-oL3"/>
                                 <exclude reference="wU0-5e-zx3"/>
                                 <exclude reference="X66-5k-RbO"/>
-                                <exclude reference="xcf-Ia-hlq"/>
                                 <exclude reference="OII-zK-vzW"/>
                                 <exclude reference="sj5-Xz-dTF"/>
+                                <exclude reference="BC3-p0-Fdl"/>
+                                <exclude reference="xcf-Ia-hlq"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Lwt-8X-t9C"/>
@@ -970,10 +1023,12 @@
                                 <exclude reference="Og1-6r-jhL"/>
                                 <exclude reference="u5m-A0-OoC"/>
                                 <exclude reference="GVz-TW-fRL"/>
+                                <exclude reference="HB3-Ps-lei"/>
                                 <exclude reference="TP0-N1-t3s"/>
                                 <exclude reference="f2i-cR-1yb"/>
                                 <exclude reference="hxF-FN-t77"/>
                                 <exclude reference="ie0-Tb-WGB"/>
+                                <exclude reference="5Qb-lm-AHi"/>
                                 <exclude reference="FZ2-rZ-ptV"/>
                                 <exclude reference="hdv-4W-fyX"/>
                                 <exclude reference="lZP-vs-HvZ"/>
@@ -988,9 +1043,10 @@
                                 <include reference="l9W-TC-oL3"/>
                                 <include reference="wU0-5e-zx3"/>
                                 <include reference="X66-5k-RbO"/>
-                                <include reference="xcf-Ia-hlq"/>
                                 <include reference="OII-zK-vzW"/>
                                 <include reference="sj5-Xz-dTF"/>
+                                <include reference="BC3-p0-Fdl"/>
+                                <include reference="xcf-Ia-hlq"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Lwt-8X-t9C"/>
@@ -1006,10 +1062,12 @@
                                 <include reference="Og1-6r-jhL"/>
                                 <include reference="u5m-A0-OoC"/>
                                 <include reference="GVz-TW-fRL"/>
+                                <include reference="HB3-Ps-lei"/>
                                 <include reference="TP0-N1-t3s"/>
                                 <include reference="f2i-cR-1yb"/>
                                 <include reference="hxF-FN-t77"/>
                                 <exclude reference="ie0-Tb-WGB"/>
+                                <include reference="5Qb-lm-AHi"/>
                                 <include reference="FZ2-rZ-ptV"/>
                                 <include reference="hdv-4W-fyX"/>
                                 <include reference="lZP-vs-HvZ"/>
@@ -1025,13 +1083,16 @@
                         <barButtonItem key="rightBarButtonItem" title="Groups" id="Ak5-xE-b68">
                             <color key="tintColor" red="0.0" green="0.94509810209274292" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
-                                <segue destination="x4R-Kn-GVI" kind="show" id="uMG-pP-vjj"/>
+                                <segue destination="x4R-Kn-GVI" kind="show" identifier="signUpToGroups" id="uMG-pP-vjj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="fullName" destination="xcf-Ia-hlq" id="gEF-Jt-GtG"/>
+                        <outlet property="firstname" destination="BC3-p0-Fdl" id="IK8-Oc-Ire"/>
+                        <outlet property="lastname" destination="xcf-Ia-hlq" id="fXw-jd-UBy"/>
+                        <outlet property="password" destination="wU0-5e-zx3" id="3MA-fl-0ee"/>
+                        <outlet property="username" destination="l9W-TC-oL3" id="XAm-Gt-iBI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOp-86-IS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1114,6 +1175,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="26" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="USI-5Q-HS4">
                                         <rect key="frame" x="0.0" y="0.0" width="352" height="304"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupName" rowHeight="31" id="LaO-we-hYW">
@@ -1125,6 +1187,7 @@
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKQ-GI-Tib">
                                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                            <animations/>
                                                             <state key="normal" title="Open"/>
                                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                                 <rect key="frame" x="270" y="-8" width="38" height="30"/>
@@ -1134,6 +1197,7 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
+                                                    <animations/>
                                                     <variation key="default">
                                                         <mask key="subviews">
                                                             <exclude reference="aKQ-GI-Tib"/>
@@ -1145,6 +1209,7 @@
                                                         </mask>
                                                     </variation>
                                                 </tableViewCellContentView>
+                                                <animations/>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -1152,6 +1217,7 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstItem="USI-5Q-HS4" firstAttribute="centerX" secondItem="Amp-6b-wOI" secondAttribute="centerX" id="TAf-DN-TaY"/>
                                     <constraint firstItem="USI-5Q-HS4" firstAttribute="centerY" secondItem="Amp-6b-wOI" secondAttribute="centerY" id="yqz-jf-LKF"/>
@@ -1233,7 +1299,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDf-Id-cB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="3957" y="240.75"/>
+=======
+            <point key="canvasLocation" x="1678.5" y="1150.5"/>
+>>>>>>> 3e5584d596a67aae648cb62c804fc8bc0df590d3
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VG4-uh-iPP">
@@ -1259,7 +1329,13 @@
         <image name="tag-line" width="675" height="134"/>
     </resources>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="cXp-aE-Guz"/>
         <segue reference="xpj-nb-4Zi"/>
+=======
+        <segue reference="2la-CN-iG5"/>
+        <segue reference="htB-mB-iXv"/>
+        <segue reference="cXp-aE-Guz"/>
+>>>>>>> 3e5584d596a67aae648cb62c804fc8bc0df590d3
     </inferredMetricsTieBreakers>
 </document>
