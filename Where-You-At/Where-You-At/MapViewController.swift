@@ -75,7 +75,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     
                     
                     for (_, location):(String, JSON) in json {
-                        print(location)
+                        
                         let name = location["first_name"].stringValue, lat = Float(location["lat"].stringValue), lng = Float(location["lng"].stringValue)
                         let pin = CustomPin(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat!), longitude: CLLocationDegrees(lng!)), title: name, subtitle: "Where you at!")
                         self.mapkit.addAnnotation(pin)

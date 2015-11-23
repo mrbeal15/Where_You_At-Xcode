@@ -25,7 +25,9 @@ class Repository {
 
 class GroupIndexViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var cell = UITableViewCell()
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,6 +42,7 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
         
         if let JSONData = NSData(contentsOfURL: reposURL!) {
             if let json = try! NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
+                
                 if let reposArray = json["items"] as? [NSDictionary]
                 {
                     for item in reposArray {
@@ -57,25 +60,23 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
         return repositories.count
     }
     
-    @IBAction func performSequeWithIdentifier(sender: UIButton) {
-    }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("GroupName", forIndexPath: indexPath) as! UITableViewCell
+        cell = tableView.dequeueReusableCellWithIdentifier("GroupName", forIndexPath: indexPath) as! UITableViewCell
         var groupLabel = cell.textLabel?.text = repositories[indexPath.row].name
+
         cell.detailTextLabel?.text = repositories[indexPath.row].description
-        func openGroup(sender: UIButton!) {
-            func performSegueWithIdentifier(sender: UIButton!){};
-        }
         
         return cell
-        
-        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            var secondViewController:userGroups = segue.destinationViewController as! userGroups
-            //this is where we'll need to send 
-        }
+
+      
     }
    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showUsers" {
+            let secondViewController:userGroups = segue.destinationViewController as! userGroups
+            secondViewController.outputMessage = cell.textLabel!.text!
+        }
+    }
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         

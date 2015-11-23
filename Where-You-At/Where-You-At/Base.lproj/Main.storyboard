@@ -230,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141.5" y="433.5"/>
+            <point key="canvasLocation" x="1894.5" y="561"/>
         </scene>
         <!--Invite-->
         <scene sceneID="96x-Cn-NTA">
@@ -371,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVq-EK-HrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3747" y="433.5"/>
+            <point key="canvasLocation" x="3957" y="924"/>
         </scene>
         <!--New User Controller View Controller-->
         <scene sceneID="1Yk-A7-uAC">
@@ -533,12 +533,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3k2-Zc-mAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3111" y="433.5"/>
+            <point key="canvasLocation" x="3172.5" y="917.25"/>
         </scene>
         <!--Group Members-->
         <scene sceneID="qj3-SA-OV8">
             <objects>
-                <viewController id="fVP-wN-3xX" userLabel="Group Members" customClass="userGroups" customModule="Where_You_At" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fVP-wN-3xX" userLabel="Group Members" customClass="userGroups" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4cv-7r-hJu"/>
                         <viewControllerLayoutGuide type="bottom" id="EOU-ys-upf"/>
@@ -595,12 +595,23 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dl8-VZ-4sQ">
-                                <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dMs-Pq-3Fn">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="h1X-Ai-YAf">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h1X-Ai-YAf" id="5vy-q4-Lss">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="60" y="223" width="303" height="383"/>
+                                    <rect key="frame" x="80" y="193" width="240" height="381"/>
                                 </variation>
-                            </stackView>
+                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OT-Oi-PtL">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -623,7 +634,7 @@
                             <mask key="subviews">
                                 <exclude reference="1gn-ah-Q9E"/>
                                 <exclude reference="uFQ-M6-sWh"/>
-                                <exclude reference="dl8-VZ-4sQ"/>
+                                <exclude reference="dMs-Pq-3Fn"/>
                                 <exclude reference="4OT-Oi-PtL"/>
                             </mask>
                             <mask key="constraints">
@@ -640,7 +651,7 @@
                             <mask key="subviews">
                                 <include reference="1gn-ah-Q9E"/>
                                 <include reference="uFQ-M6-sWh"/>
-                                <include reference="dl8-VZ-4sQ"/>
+                                <include reference="dMs-Pq-3Fn"/>
                                 <exclude reference="4OT-Oi-PtL"/>
                             </mask>
                             <mask key="constraints">
@@ -662,13 +673,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="groupName" destination="1gn-ah-Q9E" id="u94-EL-MeE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Re-3S-lC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4372" y="433"/>
+            <point key="canvasLocation" x="4827" y="361.5"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="gdY-7C-kVt">
@@ -717,7 +725,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kbr-ru-0zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5013" y="433.5"/>
+            <point key="canvasLocation" x="5514" y="459"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="Pho-s3-vjR">
@@ -1005,7 +1013,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOp-86-IS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821" y="433.5"/>
+            <point key="canvasLocation" x="2899.5" y="220.5"/>
         </scene>
         <!--UserGroups-->
         <scene sceneID="dIa-t4-HUo">
@@ -1096,11 +1104,10 @@
                                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                             <state key="normal" title="Open"/>
                                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                                <rect key="frame" x="268" y="0.0" width="38" height="30"/>
+                                                                <rect key="frame" x="270" y="-8" width="38" height="30"/>
                                                             </variation>
                                                             <connections>
-                                                                <action selector="performSequeWithIdentifier:" destination="x4R-Kn-GVI" eventType="touchUpInside" id="Wt4-aa-EUx"/>
-                                                                <segue destination="fVP-wN-3xX" kind="show" id="2la-CN-iG5"/>
+                                                                <segue destination="fVP-wN-3xX" kind="show" identifier="Group Members" id="xpj-nb-4Zi"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -1203,7 +1210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDf-Id-cB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2448" y="432.75"/>
+            <point key="canvasLocation" x="3957" y="240.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VG4-uh-iPP">
@@ -1222,14 +1229,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHa-Zk-9l9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="433.5"/>
+            <point key="canvasLocation" x="1092" y="561"/>
         </scene>
     </scenes>
     <resources>
         <image name="tag-line" width="675" height="134"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YMu-xm-gu8"/>
-        <segue reference="2la-CN-iG5"/>
+        <segue reference="cXp-aE-Guz"/>
+        <segue reference="xpj-nb-4Zi"/>
     </inferredMetricsTieBreakers>
 </document>
