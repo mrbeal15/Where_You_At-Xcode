@@ -25,6 +25,7 @@ class CustomPin : NSObject, MKAnnotation {
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    var object = String()
     
     @IBOutlet weak var mapkit: MKMapView!
     
@@ -34,7 +35,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    
+        
+        
+        
         locationManager.requestWhenInUseAuthorization()
         
         self.locationManager.delegate = self
@@ -66,17 +69,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         self.locationManager.stopUpdatingLocation()
         
-        let url = "http://whereyouat1.herokuapp.com/groups/1"
+        let url = "http://whereyouat1.herokuapp.com/groups/\(object)"
+        
         Alamofire.request(.GET, url).validate().responseJSON { response in
             switch response.result {
             case .Success:
+                
                 if let value = response.result.value {
                     let json = JSON(value)
-                    
-                    
-                    for (_, location):(String, JSON) in json {
+                    let users = json["users"]
+//                    var count = 2
+                    for (_, user):(String, JSON) in users {
                         
-                        let name = location["first_name"].stringValue, lat = Float(location["lat"].stringValue), lng = Float(location["lng"].stringValue)
+                        let name = user["first_name"].stringValue, lat = Float(user["lat"].stringValue), lng = Float(user["lng"].stringValue)
+
                         let pin = CustomPin(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat!), longitude: CLLocationDegrees(lng!)), title: name, subtitle: "Where you at!")
                         self.mapkit.addAnnotation(pin)
                         self.mapkit.centerCoordinate = pin.coordinate

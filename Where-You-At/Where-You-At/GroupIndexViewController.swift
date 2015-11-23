@@ -13,20 +13,18 @@ import Alamofire
 class Repository {
     
     var name: String?
-    var description: String?
-    var html_url: String?
+    
     
     init(json: NSDictionary) {
         self.name = json["name"] as? String
-        self.description = json["description"] as? String
-        self.html_url = json["html_url"] as? String
     }
 }
 
 class GroupIndexViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var table: UITableView!
     var cell = UITableViewCell()
-
+    var objectName = String()
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -38,16 +36,19 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let reposURL = NSURL(string: "https://api.github.com/search/repositories?q=learn+swift+language:swift&sort=stars&order=desc")
+        table.delegate = self
+        table.dataSource = self
+        
+        let reposURL = NSURL(string: "https://whereyouat1.herokuapp.com/users/1")
         
         if let JSONData = NSData(contentsOfURL: reposURL!) {
             if let json = try! NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
                 
-                if let reposArray = json["items"] as? [NSDictionary]
+                if let reposArray = json["groups"] as? [NSDictionary]
                 {
                     for item in reposArray {
                         repositories.append(Repository(json: item))
-                        
+                        print(reposArray)
                     }
                 }
             }
@@ -61,28 +62,29 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        cell = tableView.dequeueReusableCellWithIdentifier("GroupName", forIndexPath: indexPath) as! UITableViewCell
+        cell = tableView.dequeueReusableCellWithIdentifier("GroupName", forIndexPath: indexPath)
         var groupLabel = cell.textLabel?.text = repositories[indexPath.row].name
-
-        cell.detailTextLabel?.text = repositories[indexPath.row].description
-        
+        cell.detailTextLabel?.text = repositories[indexPath.row].name
         return cell
+    }
+    
+    
+    
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        return indexPath
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        objectName = tableView.cellForRowAtIndexPath(indexPath)!.textLabel!.text!
+        performSegueWithIdentifier("show", sender: indexPath)
 
-      
     }
-   
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showUsers" {
-            let secondViewController:userGroups = segue.destinationViewController as! userGroups
-            secondViewController.outputMessage = cell.textLabel!.text!
-        }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject?) {
+        let secondViewController:UserGroups = segue.destinationViewController as! UserGroups
+        secondViewController.outputMessage = objectName
     }
-
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let selectedRow = tableView.cellForRowAtIndexPath(indexPath)!
-        
-    }
+    
     
     
 
