@@ -15,11 +15,26 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if NSUserDefaults.standardUserDefaults() != 0 {
-            performSegueWithIdentifier("toGroups", sender: self)
+        let ns = NSUserDefaults.standardUserDefaults()
+        let id = ns.objectForKey("id")
+        
+//        if id == nil {
+//            clearForm();
+//            throwAlert();
+//        }
+//        else {
+//            performSegueWithIdentifier("toGroups", sender: self)
+//        }
+       
+        func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+            if (id != nil) {
+                return true
+            } else {
+                return false
+            }
         }
         
-        // Do any additional setup after loading the view, typically from a nib.
+        shouldPerformSegueWithIdentifier("toGroups", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
