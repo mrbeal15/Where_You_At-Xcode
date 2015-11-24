@@ -58,6 +58,17 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @IBAction func performSequeWithIdentifier(sender: UIButton) {
+        
+    }
+    
+    @IBAction func logout(sender: UIButton) {
+//        let id = 3
+//        NSUserDefaults.standardUserDefaults().setObject(id, forKey: "")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("")
+
+        let defaults = NSUserDefaults.standardUserDefaults()
+
+        print(defaults.dictionaryRepresentation())
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

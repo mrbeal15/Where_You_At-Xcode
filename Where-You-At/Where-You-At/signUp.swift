@@ -38,6 +38,9 @@ class signUp: UIViewController {
                         let json = JSON(value)
                         print(json["status"])
                         print("SUCCESS")
+                        let id = json["id"].int!
+                        let defaults = NSUserDefaults.standardUserDefaults()
+                        defaults.setObject(id, forKey: "id")
                         self.performSegueWithIdentifier("signUpToGroups", sender: self)
                     }
                 default: break

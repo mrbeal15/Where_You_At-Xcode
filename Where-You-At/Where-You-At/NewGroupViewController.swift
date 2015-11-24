@@ -32,16 +32,22 @@ class NewGroupViewController: UIViewController {
         let id = ns.objectForKey("id")
         
         Alamofire.request(.POST, "http://localhost:3000/groups", parameters: ["name": "\(groupname.text!)", "event": "\(event.text!)", "id": "\(id!)"])
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        print(json["status"])
+                        print("SUCCESS")
+                        self.performSegueWithIdentifier("createGroupToGroups", sender: self)
+                    }
+                default: break
+                }
+                
+                
+                //                case .Failure(let error):
+                //                    print(error)
+                //                }
+        }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
-
-}
