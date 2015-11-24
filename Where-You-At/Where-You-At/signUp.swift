@@ -30,7 +30,7 @@ class signUp: UIViewController {
     @IBOutlet var password: UITextField!
     
     @IBAction func submit(sender: UIButton) {
-        Alamofire.request(.POST, "http://localhost:3000/users", parameters: ["first_name": "\(firstname.text!)", "last_name": "\(lastname.text!)", "email": "\(username.text!)", "password": "\(password.text!)"])
+        Alamofire.request(.POST, "http://whereyouat1.herokuapp.com/users", parameters: ["first_name": "\(firstname.text!)", "last_name": "\(lastname.text!)", "email": "\(username.text!)", "password": "\(password.text!)"])
             .responseJSON { response in
                 switch response.result {
                 case .Success:

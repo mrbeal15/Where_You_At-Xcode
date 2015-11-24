@@ -14,7 +14,6 @@ class Invite: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -27,11 +26,27 @@ class Invite: UIViewController {
     
     @IBAction func addGroupMember(sender: UIButton) {
         print("=========================================")
-        Alamofire.request(.POST, "http://localhost:3000/groups/1/invite", parameters: ["email": "\(invite.text!)", "group_id": 1, "user_id": 11])
+        
+        Alamofire.request(.GET, "http://whereyouat1.herokuapp.com/users", parameters: ["email": "\(invite.text!)"])
             .responseJSON { response in
                 switch response.result {
                 case .Success:
-                    print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        print(json)
+                        print("*******SUCCESS*******")
+                    }
+                    
+                case .Failure(let error):
+                    print("GET DIDN'T QUITE WORK YET")
+                    print(error)
+                }
+            }
+        
+        Alamofire.request(.POST, "http://whereyouat1.herokuapp.com/groups/1/invite", parameters: ["email": "\(self.invite.text!)", "group_id": 1, "user_id": 11])
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
                     if let value = response.result.value {
                         let json = JSON(value)
                         print(json["status"])

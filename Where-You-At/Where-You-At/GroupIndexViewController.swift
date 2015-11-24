@@ -82,7 +82,7 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
         return cell
         
         func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            var secondViewController:userGroups = segue.destinationViewController as! userGroups
+            var secondViewController:UserGroups = segue.destinationViewController as! UserGroups
             //this is where we'll need to send 
         }
     }

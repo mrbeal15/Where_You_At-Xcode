@@ -79,7 +79,7 @@ class ViewController: UIViewController {
     @IBOutlet var password: UITextField!
 
     @IBAction func signIn(sender: UIButton) {
-        Alamofire.request(.POST, "http://localhost:3000/login",parameters: ["email" : "\(username.text!)", "password" : "\(password.text!)"], encoding: .JSON)
+        Alamofire.request(.POST, "http://whereyouat1.herokuapp.com/login", parameters: ["email" : "\(username.text!)", "password" : "\(password.text!)"], encoding: .JSON)
             .responseJSON { response in
                 switch response.result {
                 case .Success:
