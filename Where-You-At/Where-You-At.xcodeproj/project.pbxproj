@@ -208,9 +208,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0950D8281BFE346400D2CD34 /* CoreLocation.framework in Frameworks */,
 				099DEBAE1BFFB74F008F735F /* Alamofire.framework in Frameworks */,
 				0950D85E1BFEAD5B00D2CD34 /* QuartzCore.framework in Frameworks */,
-				0950D8281BFE346400D2CD34 /* CoreLocation.framework in Frameworks */,
 				095C9A501C02844300B7337E /* Alamofire.framework in Frameworks */,
 				D187DEE9669A54C8208A114E /* Pods_Where_You_At.framework in Frameworks */,
 			);

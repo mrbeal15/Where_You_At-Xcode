@@ -372,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVq-EK-HrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3060" y="862.5"/>
+            <point key="canvasLocation" x="2940" y="1073"/>
         </scene>
         <!--New Group View Controller-->
         <scene sceneID="1Yk-A7-uAC">
@@ -1387,9 +1387,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="avy-nS-P0T"/>
-        <segue reference="2la-CN-iG5"/>
-        <segue reference="Y0E-KF-bQy"/>
+        <segue reference="fb2-bp-n3U"/>
         <segue reference="YMu-xm-gu8"/>
+        <segue reference="Y0E-KF-bQy"/>
         <segue reference="GhC-nE-h4l"/>
     </inferredMetricsTieBreakers>
 </document>
