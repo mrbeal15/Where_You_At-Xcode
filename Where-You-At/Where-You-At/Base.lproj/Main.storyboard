@@ -270,12 +270,6 @@
                                 <state key="normal" title="+">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="2TC-Si-dN1"/>
@@ -293,6 +287,10 @@
                                         <include reference="dfk-sA-s3o"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="addGroupMember:" destination="XH7-Ne-ZHU" eventType="touchUpInside" id="NYF-oX-ztD"/>
+                                    <segue destination="x4R-Kn-GVI" kind="show" identifier="addGroupMember" id="xcr-hW-wdc"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4G-yW-rl5">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -370,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVq-EK-HrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3159" y="894"/>
+            <point key="canvasLocation" x="3523.5" y="1019.25"/>
         </scene>
         <!--New Group View Controller-->
         <scene sceneID="1Yk-A7-uAC">
@@ -540,7 +538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3k2-Zc-mAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2265" y="1107.75"/>
+            <point key="canvasLocation" x="2244" y="1079.25"/>
         </scene>
         <!--Group Members-->
         <scene sceneID="qj3-SA-OV8">
@@ -1131,8 +1129,9 @@
                                         <exclude reference="tzY-cd-njy"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="24"/>
+                                    <rect key="frame" x="145" y="39" width="23" height="25"/>
                                     <mask key="constraints">
                                         <include reference="8kc-5u-oS5"/>
                                         <include reference="tUL-Fc-OdP"/>
@@ -1365,8 +1364,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GhC-nE-h4l"/>
-        <segue reference="Y0E-KF-bQy"/>
+        <segue reference="xcr-hW-wdc"/>
+        <segue reference="avy-nS-P0T"/>
         <segue reference="cXp-aE-Guz"/>
-        <segue reference="Otv-HG-U37"/>
     </inferredMetricsTieBreakers>
 </document>

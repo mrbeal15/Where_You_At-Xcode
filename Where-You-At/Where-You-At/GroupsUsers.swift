@@ -95,16 +95,21 @@ class UserGroups: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+   override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject?) {
+        let invite:Invite = segue.destinationViewController as! Invite
+        invite.groupName = outputMessage
+    }
+    
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedRow = tableView.cellForRowAtIndexPath(indexPath)!
     }
 
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject?) {
-        let thirdController:MapViewController = segue.destinationViewController as! MapViewController
-        thirdController.object = currentGroup
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject?) {
+//        let thirdController:MapViewController = segue.destinationViewController as! MapViewController
+//        thirdController.object = currentGroup
+//    }
     
 
     /*

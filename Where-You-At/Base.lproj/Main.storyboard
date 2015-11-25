@@ -257,44 +257,6 @@
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="22"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8b-nM-aph">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.9450981021" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="21" id="2TC-Si-dN1"/>
-                                    <constraint firstAttribute="height" constant="23" id="HMj-RF-B14"/>
-                                    <constraint firstAttribute="height" constant="21" id="RuT-oc-Zxg"/>
-                                    <constraint firstAttribute="width" constant="23" id="dfk-sA-s3o"/>
-                                </constraints>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="2TC-Si-dN1"/>
-                                        <exclude reference="HMj-RF-B14"/>
-                                        <exclude reference="RuT-oc-Zxg"/>
-                                        <exclude reference="dfk-sA-s3o"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="24"/>
-                                    <mask key="constraints">
-                                        <include reference="2TC-Si-dN1"/>
-                                        <exclude reference="HMj-RF-B14"/>
-                                        <include reference="RuT-oc-Zxg"/>
-                                        <include reference="dfk-sA-s3o"/>
-                                    </mask>
-                                </variation>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4G-yW-rl5">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <animations/>
@@ -314,6 +276,42 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8b-nM-aph">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.9450981021" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="21" id="2TC-Si-dN1"/>
+                                    <constraint firstAttribute="height" constant="23" id="HMj-RF-B14"/>
+                                    <constraint firstAttribute="height" constant="21" id="RuT-oc-Zxg"/>
+                                    <constraint firstAttribute="width" constant="23" id="dfk-sA-s3o"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2TC-Si-dN1"/>
+                                        <exclude reference="HMj-RF-B14"/>
+                                        <exclude reference="RuT-oc-Zxg"/>
+                                        <exclude reference="dfk-sA-s3o"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="24"/>
+                                    <mask key="constraints">
+                                        <include reference="2TC-Si-dN1"/>
+                                        <exclude reference="HMj-RF-B14"/>
+                                        <include reference="RuT-oc-Zxg"/>
+                                        <include reference="dfk-sA-s3o"/>
+                                    </mask>
+                                </variation>
+                                <connections>
++                                   <action selector="addGroupMember:" destination="XH7-Ne-ZHU" eventType="touchUpInside" id="6TH-Ok-lpn"/>
++                                   <segue destination="fVP-wN-3xX" kind="show" identifier="addGroupMember" id="fb2-bp-n3U"/>
++                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -574,12 +572,6 @@
                                 <state key="normal" title="+">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Nrl-1B-ebq"/>
@@ -588,6 +580,9 @@
                                         <exclude reference="uiE-D6-oym"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="XH7-Ne-ZHU" kind="show" id="avy-nS-P0T"/>
+                                 </connections>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="24"/>
                                     <mask key="constraints">

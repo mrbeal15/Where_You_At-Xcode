@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class Invite: UIViewController {
 
@@ -17,21 +19,32 @@ class Invite: UIViewController {
     }
 
     @IBOutlet var invite: UITextField!
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
+      @IBAction func addGroupMember(sender: UIButton) {
+        print("=========================================")
+        Alamofire.request(.POST, "http://localhost:3000/groups/1/invite", parameters: ["email": "\(invite.text!)", "group_id": 1, "user_id": 11])
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
+                    print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        print(json["status"])
+                        print("SUCCESS")
+//                       not sure what to do here.  somehow add the member to the group
+                        self.performSegueWithIdentifier("addGroupMember", sender: self)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+                    }
+                case .Failure(let error):
+                    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                    print(error)
+                }
+            }
+
 
 }

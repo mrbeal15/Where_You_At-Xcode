@@ -110,7 +110,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func timer() {
-        let timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "sendCoord", userInfo: nil, repeats: true)
+        let timer = NSTimer.scheduledTimerWithTimeInterval(600.0, target: self, selector: "sendCoord", userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
 //        self.mapkit.removeAnnotations(self.mapkit.annotations)
     }
