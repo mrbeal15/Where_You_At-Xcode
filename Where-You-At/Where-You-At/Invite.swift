@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class Invite: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -23,15 +24,30 @@ class Invite: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func addGroupMember(sender: UIButton) {
+        print("=========================================")
+        
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        Alamofire.request(.POST, "http://whereyouat1.herokuapp.com/groups/1/invite", parameters: ["email": "\(self.invite.text!)"])
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        print(json["status"])
+                        print("SUCCESS")
+//                       not sure what to do here.  somehow add the member to the group
+                        self.performSegueWithIdentifier("addGroupMember", sender: self)
+                        
+                    }
+                case .Failure(let error):
+                    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                    print(error)
+                }
+            }
     }
-    */
 
+    
+
+    
 }

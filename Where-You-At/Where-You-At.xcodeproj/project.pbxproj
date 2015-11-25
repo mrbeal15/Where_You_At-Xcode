@@ -208,9 +208,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0950D8281BFE346400D2CD34 /* CoreLocation.framework in Frameworks */,
 				099DEBAE1BFFB74F008F735F /* Alamofire.framework in Frameworks */,
 				0950D85E1BFEAD5B00D2CD34 /* QuartzCore.framework in Frameworks */,
-				0950D8281BFE346400D2CD34 /* CoreLocation.framework in Frameworks */,
 				095C9A501C02844300B7337E /* Alamofire.framework in Frameworks */,
 				D187DEE9669A54C8208A114E /* Pods_Where_You_At.framework in Frameworks */,
 			);
@@ -402,7 +402,7 @@
 				TargetAttributes = {
 					0950D8011BFE345400D2CD34 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = RWHFXN8J4M;
+						DevelopmentTeam = 87JFW832E6;
 					};
 					0950D8161BFE345400D2CD34 = {
 						CreatedOnToolsVersion = 6.2;
@@ -769,6 +769,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "WYA.Where-You-At1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0c8c88fc-10b4-4494-b57d-866c47a4220a";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -785,6 +786,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "WYA.Where-You-At1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0c8c88fc-10b4-4494-b57d-866c47a4220a";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
