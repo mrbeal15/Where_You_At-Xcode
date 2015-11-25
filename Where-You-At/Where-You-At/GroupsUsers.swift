@@ -33,6 +33,8 @@ class UserGroups: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var table: UITableView!
     @IBOutlet var groupName: UILabel!
     
+   
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,18 +47,17 @@ class UserGroups: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        groupName.text = "\(outputMessage)"
-//        print("**********************")
-//        print("THIS IS THE OUTPUT MESSAGE \(groupName.text)")
-//        print("***********************")
+        groupName.text = "\(outputMessage)"
+        print("**********************")
+        print("THIS IS THE OUTPUT MESSAGE \(groupName.text)")
+        print("***********************")
 //        if groupName != nil {
 //            groupName.text = outputMessage
 //        }
 //        
         currentGroup = outputMessage
 
-        table.delegate = self
-        table.dataSource = self
+        
         
         // Do any additional setup after loading the view.
         

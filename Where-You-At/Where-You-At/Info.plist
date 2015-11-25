@@ -29,6 +29,10 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>GPS Location required for app use</string>
+	<key>requestAlwaysAuthorization</key>
+	<string></string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>GPS Location required for app use</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

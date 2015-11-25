@@ -26,6 +26,7 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
     var cell = UITableViewCell()
     var objectName = String()
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,11 +36,14 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("************!!!**********")
+//        print(userId)
+        print("************!!!**********")
         
-        table.delegate = self
-        table.dataSource = self
+        let ns = NSUserDefaults.standardUserDefaults()
+        let id = ns.objectForKey("id")!
         
-        let reposURL = NSURL(string: "https://whereyouat1.herokuapp.com/users/1")
+        let reposURL = NSURL(string: "https://whereyouat1.herokuapp.com/users/\(id)")
         
         if let JSONData = NSData(contentsOfURL: reposURL!) {
             if let json = try! NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
@@ -48,7 +52,6 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
                 {
                     for item in reposArray {
                         repositories.append(Repository(json: item))
-                        print(reposArray)
                     }
                 }
             }
@@ -61,6 +64,20 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
         return repositories.count
     }
     
+
+    
+    
+    @IBAction func logout(sender: UIButton) {
+//        let id = 3
+//        NSUserDefaults.standardUserDefaults().setObject(id, forKey: "")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("")
+
+        let defaults = NSUserDefaults.standardUserDefaults()
+
+        print(defaults.dictionaryRepresentation())
+    }
+    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         cell = tableView.dequeueReusableCellWithIdentifier("GroupName", forIndexPath: indexPath)
         var groupLabel = cell.textLabel?.text = repositories[indexPath.row].name
@@ -75,14 +92,18 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        
         objectName = tableView.cellForRowAtIndexPath(indexPath)!.textLabel!.text!
-        performSegueWithIdentifier("show", sender: indexPath)
-
+        performSegueWithIdentifier("userGroups", sender: indexPath)
     }
     
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject?) {
+        if (segue.identifier == "userGroups") {
         let secondViewController:UserGroups = segue.destinationViewController as! UserGroups
         secondViewController.outputMessage = objectName
+        }
     }
     
     

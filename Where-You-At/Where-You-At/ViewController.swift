@@ -15,44 +15,107 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let ns = NSUserDefaults.standardUserDefaults()
+        let id = ns.objectForKey("id")
+        
+    
+//        if id == nil {
+//            clearForm();
+//            throwAlert();
+//        }
+//        else {
+//            performSegueWithIdentifier("toGroups", sender: self)
+//        }
+        
+        
+        
+
+        
+       
+        func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+            if (id != nil) {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        shouldPerformSegueWithIdentifier("userGroups", sender: self)
+        
+        func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject?) {
+            if (segue.identifier == "userGroups") {
+                let GroupIndex:GroupIndexViewController = segue.destinationViewController as! GroupIndexViewController
+//                GroupIndex.userId = id
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
+   
+
+
+//    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+//        if identifier == "segueTest" {
+//            let ns = NSUserDefaults.standardUserDefaults()
+//            var id = ns.objectForKey("id")
+//            if id == nil {
+//                
+////                let alert = UIAlertView()
+////                alert.title = "No Text"
+////                alert.message = "Please Enter Text In The Box"
+////                alert.addButtonWithTitle("Ok")
+////                alert.show()
+//                
+//                return false
+//            }
+//                
+//            else {
+//                return true
+//            }
+//        }
+//        
+//        // by default, transition
+//        return true
+//    }
+    
+    
+
+    
+
+    
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
 
     @IBAction func signIn(sender: UIButton) {
-        Alamofire.request(.POST, "http://localhost:3000/login",parameters: ["email" : "\(username.text!)", "password" : "\(password.text!)"], encoding: .JSON)
+        Alamofire.request(.POST, "http://whereyouat1.herokuapp.com/login",parameters: ["email" : "\(username.text!)", "password" : "\(password.text!)"], encoding: .JSON)
             .responseJSON { response in
                 switch response.result {
                 case .Success:
                     if let value = response.result.value {
                         let json = JSON(value)
                         print(json["status"])
-                        if json["status"] != 200 {
-                            let alert = UIAlertView()
-                            alert.title = "Invalid Credentials"
-                            alert.message = "Sorry, this username and password do not match"
-                            alert.addButtonWithTitle("Ok")
-                            alert.show()
-                        } else {
-                            print("true")
-                            let id = json["id"].int
-                            let defaults = NSUserDefaults.standardUserDefaults()
-                            defaults.setObject(id, forKey: "id")
-                            self.performSegueWithIdentifier("toGroups", sender: self)
-                        }
-                        
+                        print("true")
+                        let id = json["id"].int!
+                        let defaults = NSUserDefaults.standardUserDefaults()
+                        defaults.setObject(id, forKey: "id")
+                        self.performSegueWithIdentifier("userGroups", sender: self)
                     }
                     
                 case .Failure(let error):
-                    print(error)
+                    print("You Didn't Log In")
+                    let alert = UIAlertView()
+                    alert.title = "Invalid Credentials"
+                    alert.message = "Sorry, this username and password do not match"
+                    alert.addButtonWithTitle("Ok")
+                    alert.show()
+        
                 }
+                
         }
     }
 
