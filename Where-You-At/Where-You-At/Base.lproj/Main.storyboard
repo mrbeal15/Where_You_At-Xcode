@@ -36,8 +36,9 @@
                                         <exclude reference="e7h-V4-qrJ"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="22"/>
+                                    <rect key="frame" x="267" y="216" width="66" height="36"/>
                                     <mask key="constraints">
                                         <include reference="Bys-r9-M5f"/>
                                         <include reference="O7h-6h-May"/>
@@ -59,8 +60,9 @@
                                         <exclude reference="1jL-MP-Qk4"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <rect key="frame" x="226" y="382" width="150" height="30"/>
                                     <mask key="constraints">
                                         <include reference="1jL-MP-Qk4"/>
                                     </mask>
@@ -87,7 +89,8 @@
                                         <exclude reference="lfV-OT-4sd"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="204" y="44" width="192" height="38"/>
                                     <mask key="constraints">
                                         <exclude reference="9bc-Qw-vsd"/>
                                         <exclude reference="X1F-3h-V02"/>
@@ -103,8 +106,9 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.29411765933036804" green="0.95686280727386475" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="15"/>
+                                    <rect key="frame" x="277" y="420" width="49" height="32"/>
                                 </variation>
                                 <connections>
                                     <action selector="signIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jeD-Nk-mYs"/>
@@ -125,8 +129,9 @@
                                         <exclude reference="iaM-19-lrg"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <rect key="frame" x="226" y="344" width="150" height="30"/>
                                     <mask key="constraints">
                                         <include reference="iaM-19-lrg"/>
                                     </mask>
@@ -582,8 +587,9 @@
                                         <exclude reference="uiE-D6-oym"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="24"/>
+                                    <rect key="frame" x="198" y="83" width="23" height="23"/>
                                     <mask key="constraints">
                                         <include reference="Nrl-1B-ebq"/>
                                         <include reference="TDO-tl-DdX"/>
@@ -592,7 +598,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="XH7-Ne-ZHU" kind="show" id="avy-nS-P0T"/>
+                                    <segue destination="XH7-Ne-ZHU" kind="show" identifier="addGroupMember" id="avy-nS-P0T"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dl8-VZ-4sQ">
@@ -611,6 +617,9 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="383"/>
+                                        </variation>
                                         <connections>
                                             <outlet property="dataSource" destination="fVP-wN-3xX" id="8r1-EB-xmM"/>
                                             <outlet property="delegate" destination="fVP-wN-3xX" id="zwY-X5-Lur"/>
@@ -618,6 +627,9 @@
                                     </tableView>
                                 </subviews>
                                 <animations/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="36" y="223" width="328" height="383"/>
+                                </variation>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OT-Oi-PtL">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -632,8 +644,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="22"/>
+                                    <rect key="frame" x="235" y="80" width="131" height="30"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -707,7 +720,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Map" id="ROy-pK-jTV">
                             <color key="tintColor" red="0.0" green="0.9450981021" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
-                                <segue destination="MyM-PD-ANr" kind="show" id="ciB-jS-L0u"/>
+                                <segue destination="MyM-PD-ANr" kind="show" identifier="showMap" id="ciB-jS-L0u"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -735,6 +748,9 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b8Q-jL-Gqn">
                                 <rect key="frame" x="180" y="218" width="240" height="128"/>
                                 <animations/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                </variation>
                             </mapView>
                         </subviews>
                         <animations/>
@@ -796,7 +812,8 @@
                                         <exclude reference="Wql-eC-XKH"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="225" y="318" width="150" height="30"/>
                                     <mask key="constraints">
                                         <include reference="Wql-eC-XKH"/>
                                     </mask>
@@ -808,6 +825,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="225" y="357" width="150" height="30"/>
+                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X66-5k-RbO">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -815,8 +835,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.0" green="0.9450981021" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="15"/>
+                                    <rect key="frame" x="276" y="398" width="48" height="32"/>
                                 </variation>
                                 <connections>
                                     <action selector="submit:" destination="d4N-Y2-hAx" eventType="touchUpInside" id="Lwm-ZJ-9ay"/>
@@ -843,7 +864,8 @@
                                         <exclude reference="ouS-DM-2h7"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="-38" y="44" width="676" height="38"/>
                                     <mask key="constraints">
                                         <include reference="2Nh-Dz-6gD"/>
                                         <exclude reference="h1c-FB-lYX"/>
@@ -877,8 +899,9 @@
                                         <exclude reference="leQ-hI-h3H"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="22"/>
+                                    <rect key="frame" x="260" y="174" width="83" height="36"/>
                                     <mask key="constraints">
                                         <exclude reference="FEY-1Q-RRa"/>
                                         <include reference="H7K-NI-NrL"/>
@@ -902,7 +925,8 @@
                                         <exclude reference="4g6-c7-lSs"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="225" y="238" width="150" height="30"/>
                                     <mask key="constraints">
                                         <include reference="4g6-c7-lSs"/>
                                     </mask>
@@ -922,7 +946,8 @@
                                         <exclude reference="teR-v4-hcu"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="225" y="280" width="150" height="30"/>
                                     <mask key="constraints">
                                         <include reference="teR-v4-hcu"/>
                                     </mask>
@@ -1131,7 +1156,7 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="24"/>
-                                    <rect key="frame" x="145" y="39" width="23" height="25"/>
+                                    <rect key="frame" x="145" y="39" width="23" height="44"/>
                                     <mask key="constraints">
                                         <include reference="8kc-5u-oS5"/>
                                         <include reference="tUL-Fc-OdP"/>
@@ -1185,6 +1210,9 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="574"/>
+                                        </variation>
                                         <connections>
                                             <outlet property="dataSource" destination="x4R-Kn-GVI" id="ze2-1Q-9EQ"/>
                                             <outlet property="delegate" destination="x4R-Kn-GVI" id="iQ3-tn-g67"/>
@@ -1202,7 +1230,8 @@
                                         <exclude reference="yqz-jf-LKF"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" axis="vertical">
+                                <variation key="heightClass=regular-widthClass=compact" axis="vertical" misplaced="YES">
+                                    <rect key="frame" x="28" y="97" width="348" height="574"/>
                                     <mask key="constraints">
                                         <include reference="TAf-DN-TaY"/>
                                         <include reference="yqz-jf-LKF"/>
@@ -1363,9 +1392,9 @@
         <image name="tag-line" width="675" height="134"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GhC-nE-h4l"/>
         <segue reference="xcr-hW-wdc"/>
         <segue reference="avy-nS-P0T"/>
         <segue reference="cXp-aE-Guz"/>
+        <segue reference="GhC-nE-h4l"/>
     </inferredMetricsTieBreakers>
 </document>

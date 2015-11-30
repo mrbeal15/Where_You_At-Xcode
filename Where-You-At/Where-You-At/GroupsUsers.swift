@@ -96,8 +96,14 @@ class UserGroups: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject?) {
-        let invite:Invite = segue.destinationViewController as! Invite
-        invite.groupName = outputMessage
+        if segue.identifier == "addGroupMember" {
+            let invite:Invite = segue.destinationViewController as! Invite
+            invite.groupName = outputMessage
+        }
+        else if segue.identifier == "showMap" {
+            let thirdController:MapViewController = segue.destinationViewController as! MapViewController
+            thirdController.object = currentGroup
+    }
     }
     
     

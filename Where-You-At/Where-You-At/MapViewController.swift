@@ -41,7 +41,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        self.locationManager.requestAlwaysAuthorization() //.requestWhenInUseAuthorization
+        self.locationManager.requestWhenInUseAuthorization() //.requestWhenInUseAuthorization
         
         self.locationManager.startUpdatingLocation()
         
@@ -50,6 +50,35 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         self.timer()
 //        self.timer2()
+        
+        Alamofire.request(.GET, "http://whereyouat1.herokuapp.com/groups/\(object)").validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    
+                    let users = json["users"]
+                    
+                    print("_____________________")
+                    print(users)
+                    print("_____________________")
+                    
+                    for (_, user):(String, JSON) in users {
+                        let name = user["first_name"].stringValue, lat = Float(user["lat"].stringValue), lng = Float(user["lng"].stringValue)
+                        
+                        let pin = CustomPin(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat!), longitude: CLLocationDegrees(lng!)), title: name, subtitle: "Where you at!")
+                        self.mapkit.addAnnotation(pin)
+                        self.mapkit.centerCoordinate = pin.coordinate
+                        
+                    }
+                }
+                
+            case .Failure(let error):
+                print(error)
+            }
+            print(CLLocationCoordinate2D(latitude: self.location.coordinate.latitude, longitude: self.location.coordinate.longitude))
+        }
     }
     
     var location = CLLocation()
@@ -83,14 +112,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 
                 if let value = response.result.value {
                     let json = JSON(value)
+                   
                     let users = json["users"]
                     
-                    
+                    print("_____________________")
+                    print(users)
+                    print("_____________________")
                     
                     for (_, user):(String, JSON) in users {
-                        
-                        
-                        
                         let name = user["first_name"].stringValue, lat = Float(user["lat"].stringValue), lng = Float(user["lng"].stringValue)
                         
                         let pin = CustomPin(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat!), longitude: CLLocationDegrees(lng!)), title: name, subtitle: "Where you at!")

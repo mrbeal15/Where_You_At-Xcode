@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ewu-mb-N7A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ewu-mb-N7A">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -253,8 +253,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="22"/>
+                                    <rect key="frame" x="280" y="39" width="53" height="30"/>
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4G-yW-rl5">
@@ -270,7 +271,8 @@
                                         <exclude reference="vaS-hv-odP"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="225" y="220" width="150" height="30"/>
                                     <mask key="constraints">
                                         <include reference="vaS-hv-odP"/>
                                     </mask>
@@ -298,8 +300,9 @@
                                         <exclude reference="dfk-sA-s3o"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="24"/>
+                                    <rect key="frame" x="289" y="227" width="23" height="21"/>
                                     <mask key="constraints">
                                         <include reference="2TC-Si-dN1"/>
                                         <exclude reference="HMj-RF-B14"/>
@@ -308,9 +311,9 @@
                                     </mask>
                                 </variation>
                                 <connections>
-+                                   <action selector="addGroupMember:" destination="XH7-Ne-ZHU" eventType="touchUpInside" id="6TH-Ok-lpn"/>
-+                                   <segue destination="fVP-wN-3xX" kind="show" identifier="addGroupMember" id="fb2-bp-n3U"/>
-+                                </connections>
+                                    <action selector="addGroupMember:" destination="XH7-Ne-ZHU" eventType="touchUpInside" id="6TH-Ok-lpn"/>
+                                    <segue destination="fVP-wN-3xX" kind="show" identifier="addGroupMember" id="fb2-bp-n3U"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -330,8 +333,8 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Ldt-cv-jN7"/>
-                                <exclude reference="v8b-nM-aph"/>
                                 <exclude reference="d4G-yW-rl5"/>
+                                <exclude reference="v8b-nM-aph"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="wS0-vy-13T"/>
@@ -345,8 +348,8 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Ldt-cv-jN7"/>
-                                <include reference="v8b-nM-aph"/>
                                 <include reference="d4G-yW-rl5"/>
+                                <include reference="v8b-nM-aph"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="wS0-vy-13T"/>
@@ -554,8 +557,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="22"/>
+                                    <rect key="frame" x="235" y="39" width="131" height="30"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFQ-M6-sWh">
@@ -580,11 +584,9 @@
                                         <exclude reference="uiE-D6-oym"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <segue destination="XH7-Ne-ZHU" kind="show" id="avy-nS-P0T"/>
-                                 </connections>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="24"/>
+                                    <rect key="frame" x="199" y="32" width="23" height="44"/>
                                     <mask key="constraints">
                                         <include reference="Nrl-1B-ebq"/>
                                         <include reference="TDO-tl-DdX"/>
@@ -592,6 +594,9 @@
                                         <exclude reference="uiE-D6-oym"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="XH7-Ne-ZHU" kind="show" id="avy-nS-P0T"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -1136,6 +1141,8 @@
         <image name="tag-line" width="675" height="134"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="fb2-bp-n3U"/>
+        <segue reference="avy-nS-P0T"/>
         <segue reference="cXp-aE-Guz"/>
     </inferredMetricsTieBreakers>
 </document>
