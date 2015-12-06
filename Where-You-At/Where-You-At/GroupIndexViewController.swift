@@ -36,12 +36,14 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("************!!!**********")
-//        print(userId)
-        print("************!!!**********")
+
         
         let ns = NSUserDefaults.standardUserDefaults()
         let id = ns.objectForKey("id")!
+        
+        print("************!!!**********")
+                print(id)
+        print("************!!!**********")
         
         let reposURL = NSURL(string: "https://whereyouat1.herokuapp.com/users/\(id)")
         

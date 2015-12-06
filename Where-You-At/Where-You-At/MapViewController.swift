@@ -85,12 +85,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func sendCoord() {
         let ns = NSUserDefaults.standardUserDefaults()
-        let id = ns.objectForKey("id")!
+        let id = ns.objectForKey("id")
         
         let userLocation = mapkit.userLocation
-        
-            
-        Alamofire.request(.POST, "http://whereyouat1.herokuapp.com/users/\(id)/coordinates", parameters: ["coord": ["lat":"\(userLocation.coordinate.latitude)", "lng":"\(userLocation.coordinate.longitude)"]])
+    
+        print(">>>>>>>>>>>>>>>>>\(userLocation.coordinate.latitude)<<<<<<<<<")
+        print(">>>>>>>>>>>>>>>>>\(id!)<<<<<<<<<")
+        Alamofire.request(.POST, "http://whereyouat1.herokuapp.com/users/\(id!)/coordinates", parameters: ["coord": ["lat":"\(userLocation.coordinate.latitude)", "lng":"\(userLocation.coordinate.longitude)"]])
             .responseJSON { response in
                 switch response.result {
                 case .Success:
@@ -119,6 +120,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     print(users)
                     print("_____________________")
                     
+                    let annotationsToRemove = self.mapkit.annotations.filter { $0 !== self.mapkit.userLocation }
+                    self.mapkit.removeAnnotations( annotationsToRemove )
+                    
                     for (_, user):(String, JSON) in users {
                         let name = user["first_name"].stringValue, lat = Float(user["lat"].stringValue), lng = Float(user["lng"].stringValue)
                         
@@ -139,7 +143,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func timer() {
-        let timer = NSTimer.scheduledTimerWithTimeInterval(600.0, target: self, selector: "sendCoord", userInfo: nil, repeats: true)
+        let timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: "sendCoord", userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
 //        self.mapkit.removeAnnotations(self.mapkit.annotations)
     }
