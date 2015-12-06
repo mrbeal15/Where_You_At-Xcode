@@ -13,10 +13,14 @@ import Alamofire
 class Repository {
     
     var name: String?
+    var description: String?
+    var html_url: String?
     
     
     init(json: NSDictionary) {
         self.name = json["name"] as? String
+        self.description = json["description"] as? String
+        self.html_url = json["html_url"] as? String
     }
 }
 
@@ -70,8 +74,7 @@ class GroupIndexViewController: UIViewController, UITableViewDataSource, UITable
     
     
     @IBAction func logout(sender: UIButton) {
-//        let id = 3
-//        NSUserDefaults.standardUserDefaults().setObject(id, forKey: "")
+
         NSUserDefaults.standardUserDefaults().removeObjectForKey("")
 
         let defaults = NSUserDefaults.standardUserDefaults()
