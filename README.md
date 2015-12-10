@@ -1,13 +1,24 @@
 # where-you-at-xcode
 
-# mikehub
 Week 7 group project.
 - Eileen - @mceileen
 - Lorena - @dclorena11
 - Matt - @mrbeal15
 - Nicole - @ntolch
 
-## Group norms
+##About the project
+Where You At is an iOS on Rails app which allows you to join groups with other users so you can see where all your friends are on a map at any given time while you're out on the town or at a concert. This was our 7-day final project at Dev Bootcamp in which we utilized the following technologies: Ruby, Rails, Swift, xCode, AlamoFire, SwiftyJSON and Heroku. 
+
+##Tech Stack
+-Xcode
+-Swift
+-Cocoa Pods
+-Ruby on Rails
+-SwiftyJSON
+-Alamofire
+-Heroku
+
+##Group norms
 - Every day there are 2 merge masters.  We will rotate by day.
   * Tuesday - Eileen, Matt
   * Wednesday - Eileen, Matt
