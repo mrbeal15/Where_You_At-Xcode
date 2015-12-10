@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         let ns = NSUserDefaults.standardUserDefaults()
         let id = ns.objectForKey("id")
         
+    
 //        if id == nil {
 //            clearForm();
 //            throwAlert();
@@ -25,6 +26,11 @@ class ViewController: UIViewController {
 //        else {
 //            performSegueWithIdentifier("toGroups", sender: self)
 //        }
+        
+        
+        
+
+        
        
         func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
             if (id != nil) {
@@ -34,7 +40,14 @@ class ViewController: UIViewController {
             }
         }
         
-        shouldPerformSegueWithIdentifier("toGroups", sender: self)
+        shouldPerformSegueWithIdentifier("userGroups", sender: self)
+        
+        func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject?) {
+            if (segue.identifier == "userGroups") {
+                let GroupIndex:GroupIndexViewController = segue.destinationViewController as! GroupIndexViewController
+//                GroupIndex.userId = id
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,7 +92,7 @@ class ViewController: UIViewController {
     @IBOutlet var password: UITextField!
 
     @IBAction func signIn(sender: UIButton) {
-        Alamofire.request(.POST, "http://localhost:3000/login",parameters: ["email" : "\(username.text!)", "password" : "\(password.text!)"], encoding: .JSON)
+        Alamofire.request(.POST, "http://whereyouat1.herokuapp.com/login",parameters: ["email" : "\(username.text!)", "password" : "\(password.text!)"], encoding: .JSON)
             .responseJSON { response in
                 switch response.result {
                 case .Success:
@@ -90,7 +103,7 @@ class ViewController: UIViewController {
                         let id = json["id"].int!
                         let defaults = NSUserDefaults.standardUserDefaults()
                         defaults.setObject(id, forKey: "id")
-                        self.performSegueWithIdentifier("toGroups", sender: self)
+                        self.performSegueWithIdentifier("userGroups", sender: self)
                     }
                     
                 case .Failure(let error):

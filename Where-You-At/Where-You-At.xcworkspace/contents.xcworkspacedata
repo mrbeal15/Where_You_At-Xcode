@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../build-beautiful-meaningful-things-challenge/app/models/wya.gpx">
+   </FileRef>
+   <FileRef
       location = "group:Where-You-At.xcodeproj">
    </FileRef>
    <FileRef

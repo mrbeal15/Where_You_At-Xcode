@@ -11,6 +11,7 @@ import SwiftyJSON
 import Alamofire
 import CoreLocation
 import MapKit
+import Foundation
 
 class CustomPin : NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
@@ -25,6 +26,7 @@ class CustomPin : NSObject, MKAnnotation {
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    var object = String()
     
     @IBOutlet weak var mapkit: MKMapView!
     
@@ -32,51 +34,41 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    
+        
         locationManager.requestWhenInUseAuthorization()
         
         self.locationManager.delegate = self
         
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.requestWhenInUseAuthorization() //.requestWhenInUseAuthorization
         
         self.locationManager.startUpdatingLocation()
         
         self.mapkit.showsUserLocation = true
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        let location = locations.last
         
-        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
         
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
+        self.timer()
+//        self.timer2()
         
-        self.mapkit.setRegion(region, animated: true)
-        
-        self.locationManager.stopUpdatingLocation()
-        
-        let url = "http://whereyouat1.herokuapp.com/groups/1"
-        Alamofire.request(.GET, url).validate().responseJSON { response in
+        Alamofire.request(.GET, "http://whereyouat1.herokuapp.com/groups/\(object)").validate().responseJSON { response in
             switch response.result {
             case .Success:
+                
                 if let value = response.result.value {
                     let json = JSON(value)
                     
+                    let users = json["users"]
                     
-                    for (_, location):(String, JSON) in json {
-                        print(location)
-                        let name = location["first_name"].stringValue, lat = Float(location["lat"].stringValue), lng = Float(location["lng"].stringValue)
+                    print("_____________________")
+                    print(users)
+                    print("_____________________")
+                    
+                    for (_, user):(String, JSON) in users {
+                        let name = user["first_name"].stringValue, lat = Float(user["lat"].stringValue), lng = Float(user["lng"].stringValue)
+                        
                         let pin = CustomPin(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat!), longitude: CLLocationDegrees(lng!)), title: name, subtitle: "Where you at!")
                         self.mapkit.addAnnotation(pin)
                         self.mapkit.centerCoordinate = pin.coordinate
@@ -87,12 +79,135 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             case .Failure(let error):
                 print(error)
             }
+            print(CLLocationCoordinate2D(latitude: self.location.coordinate.latitude, longitude: self.location.coordinate.longitude))
+        }
+    }
+    
+    var location = CLLocation()
+    
+    func sendCoord() {
+        let ns = NSUserDefaults.standardUserDefaults()
+        let id = ns.objectForKey("id")
+        
+        let userLocation = mapkit.userLocation
+    
+        print(">>>>>>>>>>>>>>>>>\(userLocation.coordinate.latitude)<<<<<<<<<")
+        print(">>>>>>>>>>>>>>>>>\(id!)<<<<<<<<<")
+        Alamofire.request(.POST, "http://whereyouat1.herokuapp.com/users/\(id!)/coordinates", parameters: ["coord": ["lat":"\(userLocation.coordinate.latitude)", "lng":"\(userLocation.coordinate.longitude)"]])
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
+                    if let value = response.result.value{
+                        let json = JSON(value)
+                        print(json["status"])
+                    }
+                
+                case .Failure(let error):
+                    print(error)
+                }
         }
         
+        
+        
+        Alamofire.request(.GET, "http://whereyouat1.herokuapp.com/groups/\(object)").validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                
+                if let value = response.result.value {
+                    let json = JSON(value)
+                   
+                    let users = json["users"]
+                    
+                    print("_____________________")
+                    print(users)
+                    print("_____________________")
+                    
+                    let annotationsToRemove = self.mapkit.annotations.filter { $0 !== self.mapkit.userLocation }
+                    self.mapkit.removeAnnotations( annotationsToRemove )
+                    
+                    for (_, user):(String, JSON) in users {
+                        let name = user["first_name"].stringValue, lat = Float(user["lat"].stringValue), lng = Float(user["lng"].stringValue)
+                        
+                        let pin = CustomPin(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat!), longitude: CLLocationDegrees(lng!)), title: name, subtitle: "Where you at!")
+                        self.mapkit.addAnnotation(pin)
+//                        self.mapkit.centerCoordinate = pin.coordinate
+                        let regionRadius: CLLocationDistance = 500
+                        let coordinateRegion = MKCoordinateRegionMakeWithDistance(pin.coordinate,
+                            regionRadius * 2.0, regionRadius * 2.0)
+                        self.mapkit.setRegion(coordinateRegion, animated: true)
+
+            
+                        
+                    }
+                }
+                
+            case .Failure(let error):
+                print(error)
+            }
+            print(CLLocationCoordinate2D(latitude: self.location.coordinate.latitude, longitude: self.location.coordinate.longitude))
+        }
+
+        
+    }
+    
+    func timer() {
+        let timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: "sendCoord", userInfo: nil, repeats: true)
+        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+//        self.mapkit.removeAnnotations(self.mapkit.annotations)
+    }
+    
+    
+//    func timer2() {
+//        let timer2 = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "locationManager", userInfo: nil, repeats: true)
+//        NSRunLoop.currentRunLoop().addTimer(timer2, forMode: NSRunLoopCommonModes)
+//    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
 
     
+        func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            
+            let location = locations.last
+            
+            let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+            
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
+            
+            self.mapkit.setRegion(region, animated: true)
+            
+            self.locationManager.stopUpdatingLocation()
+
+            let url = "http://whereyouat1.herokuapp.com/groups/\(object)"
+            
+//            Alamofire.request(.GET, url).validate().responseJSON { response in
+//                switch response.result {
+//                case .Success:
+//                    
+//                    if let value = response.result.value {
+//                        let json = JSON(value)
+//                        let users = json["users"]
+//                        for (_, user):(String, JSON) in users {
+//                            
+//                            let name = user["first_name"].stringValue, lat = Float(user["lat"].stringValue), lng = Float(user["lng"].stringValue)
+//
+//                            let pin = CustomPin(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat!), longitude: CLLocationDegrees(lng!)), title: name, subtitle: "Where you at!")
+//                            self.mapkit.addAnnotation(pin)
+//                            self.mapkit.centerCoordinate = pin.coordinate
+//                            
+//                        }
+//                    }
+//                    
+//                case .Failure(let error):
+//                    print(error)
+//                }
+//            }
+//            print(center)
+        }
+
     
     func locationmanager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus){
         if case .AuthorizedWhenInUse = status {

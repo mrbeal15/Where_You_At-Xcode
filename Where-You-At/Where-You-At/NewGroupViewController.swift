@@ -31,7 +31,7 @@ class NewGroupViewController: UIViewController {
         let ns = NSUserDefaults.standardUserDefaults()
         let id = ns.objectForKey("id")
         
-        Alamofire.request(.POST, "http://localhost:3000/groups", parameters: ["name": "\(groupname.text!)", "event": "\(event.text!)", "id": "\(id!)"])
+        Alamofire.request(.POST, "http://whereyouat1.herokuapp.com/groups", parameters: ["name": "\(groupname.text!)", "event": "\(event.text!)", "id": "\(id!)"])
             .responseJSON { response in
                 switch response.result {
                 case .Success:
