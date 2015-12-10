@@ -3,7 +3,7 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "WYA-icon 58x58.png",
+      "filename" : "Icon-sm.png",
       "scale" : "2x"
     },
     {
@@ -14,7 +14,7 @@
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "WYA-icon 80x80.png",
+      "filename" : "Icon-med.png",
       "scale" : "2x"
     },
     {
@@ -25,7 +25,7 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "WYA-icon 120x120.png",
+      "filename" : "Icon-large.png",
       "scale" : "2x"
     },
     {

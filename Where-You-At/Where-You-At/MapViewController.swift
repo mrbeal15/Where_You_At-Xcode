@@ -48,6 +48,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.mapkit.showsUserLocation = true
         
         
+        
+        
         self.timer()
 //        self.timer2()
         
@@ -128,7 +130,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                         
                         let pin = CustomPin(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat!), longitude: CLLocationDegrees(lng!)), title: name, subtitle: "Where you at!")
                         self.mapkit.addAnnotation(pin)
-                        self.mapkit.centerCoordinate = pin.coordinate
+//                        self.mapkit.centerCoordinate = pin.coordinate
+                        let regionRadius: CLLocationDistance = 500
+                        let coordinateRegion = MKCoordinateRegionMakeWithDistance(pin.coordinate,
+                            regionRadius * 2.0, regionRadius * 2.0)
+                        self.mapkit.setRegion(coordinateRegion, animated: true)
+
+            
                         
                     }
                 }
